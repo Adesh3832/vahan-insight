@@ -946,19 +946,14 @@ with tab4:
             # Model Performance Metrics - Prophet
             col1, col2, col3, col4 = st.columns(4)
             with col1:
-                st.metric("📈 2026 Forecast", f"{p_metrics.get('2026_avg_monthly', 0):,.0f}/mo", "Monthly EVs")
+                r2 = p_metrics.get('r2_score', 0)
+                st.metric("📊 R² Score", f"{r2:.3f}", "Good fit" if r2 > 0.8 else "Moderate")
             with col2:
-                st.metric("🚀 2030 Forecast", f"{p_metrics.get('2030_avg_monthly', 0):,.0f}/mo", "Monthly EVs")
+                st.metric("📉 RMSE", f"{p_metrics.get('rmse', 0):.0f}", "Monthly registrations")
             with col3:
-                st.metric("📊 5yr Growth", f"{p_metrics.get('growth_rate_5yr', 0):.0f}%", "CAGR ~13%")
+                st.metric("🎯 MAE", f"{p_metrics.get('mae', 0):.0f}", "Avg error")
             with col4:
-                # Load clustering silhouette from XGBoost metrics
-                if xgb_metrics_path.exists():
-                    with open(xgb_metrics_path) as f:
-                        xgb_metrics = json.load(f)
-                    st.metric("🔍 Silhouette", f"{xgb_metrics.get('silhouette_score', 0):.3f}", "Cluster quality")
-                else:
-                    st.metric("📅 Training Data", f"{p_metrics.get('training_samples', 0)}", "Months")
+                st.metric("📈 MAPE", f"{p_metrics.get('mape', 0):.1f}%", "Pct error")
         else:
             with open(xgb_metrics_path) as f:
                 metrics = json.load(f)

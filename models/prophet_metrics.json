@@ -7,5 +7,9 @@
   "forecast_end": "2030-12-31",
   "2026_avg_monthly": 4669.0,
   "2030_avg_monthly": 7717.0,
-  "growth_rate_5yr": 65.3
+  "growth_rate_5yr": 65.3,
+  "r2_score": 0.817,
+  "rmse": 595.8,
+  "mae": 396.1,
+  "mape": 40.2
 }

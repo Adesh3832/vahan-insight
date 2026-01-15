@@ -111,7 +111,7 @@ def forecast_future(model, cap, periods=60):
 
 
 def save_results(model, forecast, df_historical):
-    """Save model and forecast results"""
+    """Save model and forecast results with fit metrics"""
     print("\n💾 Saving Prophet model and forecast...")
     
     # Save model
@@ -122,6 +122,29 @@ def save_results(model, forecast, df_historical):
     forecast_output = forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].copy()
     forecast_output.columns = ['date', 'forecast', 'lower_bound', 'upper_bound']
     forecast_output.to_csv(MODELS_DIR / 'prophet_forecast.csv', index=False)
+    
+    # Calculate model fit metrics on historical data
+    historical_forecast = forecast[forecast['ds'].isin(df_historical['ds'])].copy()
+    merged = historical_forecast.merge(df_historical, on='ds')
+    
+    actual = merged['y'].values
+    predicted = merged['yhat'].values
+    
+    # Calculate metrics
+    rmse = np.sqrt(np.mean((actual - predicted) ** 2))
+    mae = np.mean(np.abs(actual - predicted))
+    mape = np.mean(np.abs((actual - predicted) / actual)) * 100
+    
+    # R² calculation
+    ss_res = np.sum((actual - predicted) ** 2)
+    ss_tot = np.sum((actual - np.mean(actual)) ** 2)
+    r2 = 1 - (ss_res / ss_tot)
+    
+    print(f"\n📊 Model Fit Metrics (on training data):")
+    print(f"  R² Score: {r2:.3f}")
+    print(f"  RMSE: {rmse:.1f}")
+    print(f"  MAE: {mae:.1f}")
+    print(f"  MAPE: {mape:.1f}%")
     
     # Save summary metrics
     historical_end = df_historical['ds'].max()
@@ -139,7 +162,12 @@ def save_results(model, forecast, df_historical):
         'growth_rate_5yr': round(
             (forecast_only[forecast_only['ds'].dt.year == 2030]['yhat'].mean() / 
              forecast_only[forecast_only['ds'].dt.year == 2026]['yhat'].mean() - 1) * 100, 1
-        )
+        ),
+        # Model fit metrics
+        'r2_score': round(r2, 3),
+        'rmse': round(rmse, 1),
+        'mae': round(mae, 1),
+        'mape': round(mape, 1)
     }
     
     with open(MODELS_DIR / 'prophet_metrics.json', 'w') as f:
