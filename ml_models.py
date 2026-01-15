@@ -243,31 +243,37 @@ def cluster_states(df_agg):
         total_vehicles = total_data.get(state, 1)
         adoption_rate = (total_evs / total_vehicles) * 100
         
-        # Growth rate (2020-2021 vs 2024-2025)
+        # Calculate CAGR (Compound Annual Growth Rate) instead of cumulative
         early_period = state_ev[state_ev['reg_year'].isin([2020, 2021])]['vehicleCount'].sum()
         late_period = state_ev[state_ev['reg_year'].isin([2024, 2025])]['vehicleCount'].sum()
-        growth_rate = ((late_period - early_period) / (early_period + 1)) * 100
         
-        # Average monthly registrations
-        avg_monthly = total_evs / 72  # 6 years * 12 months
+        # CAGR over 4 years (2021 to 2025)
+        if early_period > 0:
+            cagr = ((late_period / (early_period + 1)) ** (1/4) - 1) * 100
+        else:
+            cagr = 0
+        
+        # Average monthly registrations (recent year)
+        recent_evs = state_ev[state_ev['reg_year'] == 2025]['vehicleCount'].sum()
+        avg_monthly = recent_evs / 12
         
         state_metrics.append({
             'state': state,
             'total_evs': total_evs,
             'adoption_rate': adoption_rate,
-            'growth_rate': growth_rate,
+            'growth_rate': cagr,  # Now it's CAGR, not cumulative
             'avg_monthly': avg_monthly
         })
     
     metrics_df = pd.DataFrame(state_metrics)
     
     # Prepare features for clustering
-    X_cluster = metrics_df[['adoption_rate', 'growth_rate', 'avg_monthly']].values
+    X_cluster = metrics_df[['adoption_rate', 'growth_rate', 'total_evs']].values
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X_cluster)
     
-    # Find optimal k using elbow method
-    best_k = 4  # Default
+    # Find optimal k using silhouette score
+    best_k = 4
     best_score = -1
     
     for k in range(3, 6):
@@ -282,23 +288,21 @@ def cluster_states(df_agg):
     kmeans = KMeans(n_clusters=best_k, random_state=42, n_init=10)
     metrics_df['cluster'] = kmeans.fit_predict(X_scaled)
     
-    # Assign cluster names based on characteristics
+    # Name clusters based on their characteristics (percentile-based)
+    cluster_stats = metrics_df.groupby('cluster').agg({
+        'total_evs': 'mean',
+        'adoption_rate': 'mean',
+        'growth_rate': 'mean'
+    }).reset_index()
+    
+    # Sort clusters by total_evs to assign meaningful names
+    cluster_stats = cluster_stats.sort_values('total_evs', ascending=False)
+    
+    # Assign names based on rank
+    names = ['EV Leaders', 'High Adopters', 'Growing Markets', 'Emerging Markets', 'Early Stage']
     cluster_names = {}
-    for cluster_id in range(best_k):
-        cluster_states = metrics_df[metrics_df['cluster'] == cluster_id]
-        avg_adoption = cluster_states['adoption_rate'].mean()
-        avg_growth = cluster_states['growth_rate'].mean()
-        
-        if avg_adoption >= 7:
-            name = "EV Leaders"
-        elif avg_growth >= 50:
-            name = "Rapid Growers"
-        elif avg_adoption >= 4:
-            name = "Steady Adopters"
-        else:
-            name = "Emerging Markets"
-        
-        cluster_names[cluster_id] = name
+    for i, row in enumerate(cluster_stats.itertuples()):
+        cluster_names[row.cluster] = names[i] if i < len(names) else f"Cluster {i+1}"
     
     metrics_df['cluster_name'] = metrics_df['cluster'].map(cluster_names)
     

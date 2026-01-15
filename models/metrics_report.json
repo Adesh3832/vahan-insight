@@ -4,5 +4,5 @@
   "mae_test": 42.53,
   "r2_test": 0.858,
   "mape_test": 70.73,
-  "silhouette_score": 0.458
+  "silhouette_score": 0.481
 }
