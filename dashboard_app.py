@@ -122,6 +122,9 @@ def load_data():
 # Load data (will auto-setup if needed)
 df_main, df_agg = load_data()
 
+# Base directory for accessing models
+base_dir = Path(__file__).parent
+
 # Sidebar
 with st.sidebar:
     st.title("🚗 Vahan-Insight")
@@ -252,7 +255,7 @@ For comprehensive registration counts, refer to official government sources.
 """, icon="ℹ️")
 
 # Tabs
-tab1, tab2, tab3 = st.tabs(["📈 Overview", "🔋 EV Deep Dive", "⛽ Fuel Analysis"])
+tab1, tab2, tab3, tab4 = st.tabs(["📈 Overview", "🔋 EV Deep Dive", "⛽ Fuel Analysis", "🔮 ML Insights"])
 
 # ============= TAB 1: OVERVIEW =============
 with tab1:
@@ -915,6 +918,179 @@ with tab3:
     )
     st.plotly_chart(fig, use_container_width=True)
 
+# ============= TAB 4: ML INSIGHTS =============
+with tab4:
+    st.markdown("### 🤖 Machine Learning Insights")
+    st.info("**Powered by XGBoost** | Forecasting EV adoption trends for 2026-2030")
+    
+    # Check if ML models exist
+    models_dir = base_dir / "models"
+    
+    if not (models_dir / "forecast_2026_2030.csv").exists():
+        st.warning("⚠️ ML models not yet trained. Run `python ml_models.py` to generate forecasts.")
+    else:
+        # Load ML results
+        forecast_df = pd.read_csv(models_dir / "forecast_2026_2030.csv")
+        clusters_df = pd.read_csv(models_dir / "state_clusters.csv")
+        importance_df = pd.read_csv(models_dir / "feature_importance.csv")
+        
+        import json
+        with open(models_dir / "metrics_report.json") as f:
+            metrics = json.load(f)
+        
+        # Model Performance Metrics
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            st.metric("📊 R² Score", f"{metrics['r2_test']:.3f}", "Good fit" if metrics['r2_test'] > 0.8 else "Moderate")
+        with col2:
+            st.metric("📉 RMSE", f"{metrics['rmse_test']:.1f}", "Monthly registrations")
+        with col3:
+            st.metric("🎯 MAE", f"{metrics['mae_test']:.1f}", "Avg error")
+        with col4:
+            st.metric("🔍 Silhouette", f"{metrics['silhouette_score']:.3f}", "Cluster quality")
+        
+        st.markdown("---")
+        
+        # Two columns: Forecast and Clusters
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("### 📈 EV Adoption Forecast (2026-2030)")
+            
+            # Get historical data for comparison
+            ev_historical = df_agg_filtered[df_agg_filtered['fuel_category'] == 'EV']
+            hist_monthly = ev_historical.groupby(pd.Grouper(key='registration_date', freq='M'))['vehicleCount'].sum().reset_index()
+            hist_monthly.columns = ['date', 'count']
+            hist_monthly['type'] = 'Historical'
+            
+            # Top states forecast
+            top_states = clusters_df.nlargest(5, 'total_evs')['state'].tolist()
+            forecast_top = forecast_df[forecast_df['state'].isin(top_states)]
+            forecast_top['date'] = pd.to_datetime(forecast_top['date'])
+            
+            # Aggregate forecast by date
+            forecast_agg = forecast_top.groupby('date')['predicted_count'].sum().reset_index()
+            forecast_agg.columns = ['date', 'count']
+            forecast_agg['type'] = 'Forecast'
+            
+            # Combine
+            combined = pd.concat([
+                hist_monthly[['date', 'count', 'type']],
+                forecast_agg[['date', 'count', 'type']]
+            ])
+            
+            fig = px.line(
+                combined,
+                x='date',
+                y='count',
+                color='type',
+                color_discrete_map={'Historical': '#667eea', 'Forecast': '#f093fb'},
+                labels={'count': 'Monthly EV Registrations', 'date': 'Date'}
+            )
+            fig.update_layout(
+                height=350,
+                margin=dict(l=0, r=0, t=0, b=0),
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
+                legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5)
+            )
+            # Add vertical line at forecast start
+            fig.add_vline(x=pd.Timestamp('2025-12-31'), line_dash="dash", line_color="gray", 
+                          annotation_text="Forecast Start")
+            st.plotly_chart(fig, use_container_width=True)
+        
+        with col2:
+            st.markdown("### 🎯 State Clustering Analysis")
+            
+            # Scatter plot of clusters
+            fig = px.scatter(
+                clusters_df,
+                x='adoption_rate',
+                y='growth_rate',
+                size='total_evs',
+                color='cluster_name',
+                hover_name='state',
+                hover_data={'total_evs': True, 'adoption_rate': ':.2f', 'growth_rate': ':.1f'},
+                color_discrete_sequence=px.colors.qualitative.Set2,
+                labels={'adoption_rate': 'EV Adoption Rate (%)', 'growth_rate': 'Growth Rate (%)'}
+            )
+            fig.update_layout(
+                height=350,
+                margin=dict(l=0, r=0, t=0, b=0),
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
+                legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5)
+            )
+            st.plotly_chart(fig, use_container_width=True)
+        
+        st.markdown("---")
+        
+        # Feature Importance and Top Predictions
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("### 🔑 Key Drivers of EV Growth")
+            
+            fig = px.bar(
+                importance_df.head(6),
+                x='importance_pct',
+                y='feature',
+                orientation='h',
+                color='importance_pct',
+                color_continuous_scale='Blues',
+                labels={'importance_pct': 'Importance (%)', 'feature': 'Feature'}
+            )
+            fig.update_layout(
+                height=300,
+                margin=dict(l=0, r=0, t=0, b=0),
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
+                showlegend=False,
+                coloraxis_showscale=False,
+                yaxis={'categoryorder': 'total ascending'}
+            )
+            st.plotly_chart(fig, use_container_width=True)
+            
+            st.info("""
+            **Key Insights:**
+            - 📊 **Recent trends** (rolling_avg, lag features) are strong predictors
+            - 📈 **YoY growth** indicates momentum continuation
+            - 📅 **Seasonality** (month) matters for registration patterns
+            """)
+        
+        with col2:
+            st.markdown("### 🏆 Top States - 2030 Forecast")
+            
+            # Get 2030 predictions
+            forecast_df['date'] = pd.to_datetime(forecast_df['date'])
+            forecast_2030 = forecast_df[forecast_df['date'].dt.year == 2030]
+            state_totals = forecast_2030.groupby('state')['predicted_count'].sum().sort_values(ascending=False).head(10)
+            
+            fig = px.bar(
+                x=state_totals.values,
+                y=state_totals.index,
+                orientation='h',
+                color=state_totals.values,
+                color_continuous_scale='Greens',
+                labels={'x': 'Predicted Monthly EV Registrations', 'y': 'State'}
+            )
+            fig.update_layout(
+                height=300,
+                margin=dict(l=0, r=0, t=0, b=0),
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
+                showlegend=False,
+                coloraxis_showscale=False,
+                yaxis={'categoryorder': 'total ascending'}
+            )
+            st.plotly_chart(fig, use_container_width=True)
+            
+            st.success(f"""
+            **2030 Prediction Highlights:**
+            - 🥇 **{state_totals.index[0]}** leads with ~{state_totals.values[0]:.0f} monthly registrations
+            - 🚀 Top 5 states account for {(state_totals.values[:5].sum() / state_totals.values.sum() * 100):.0f}% of predictions
+            """)
+
 # Footer
 st.markdown("---")
-st.caption("📊 Vahan-Insight Dashboard | Data: Indian Vehicle Registration (2020-2025) | Powered by Streamlit")
+st.caption("📊 Vahan-Insight Dashboard | Data: Indian Vehicle Registration (2020-2025) | ML: XGBoost + K-Means | Powered by Streamlit")

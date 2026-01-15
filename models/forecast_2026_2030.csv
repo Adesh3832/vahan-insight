@@ -1,0 +1,1561 @@
+date,state,predicted_count,type
+2026-01-31,West Bengal,88.0382,forecast
+2026-02-28,West Bengal,83.2969,forecast
+2026-03-31,West Bengal,85.84899,forecast
+2026-04-30,West Bengal,78.32688,forecast
+2026-05-31,West Bengal,73.18687,forecast
+2026-06-30,West Bengal,74.78594,forecast
+2026-07-31,West Bengal,81.472145,forecast
+2026-08-31,West Bengal,78.30856,forecast
+2026-09-30,West Bengal,78.27235,forecast
+2026-10-31,West Bengal,80.189095,forecast
+2026-11-30,West Bengal,78.63238,forecast
+2026-12-31,West Bengal,76.798004,forecast
+2027-01-31,West Bengal,76.33412,forecast
+2027-02-28,West Bengal,78.45646,forecast
+2027-03-31,West Bengal,82.74942,forecast
+2027-04-30,West Bengal,79.84353,forecast
+2027-05-31,West Bengal,73.92504,forecast
+2027-06-30,West Bengal,74.41355,forecast
+2027-07-31,West Bengal,80.12125,forecast
+2027-08-31,West Bengal,77.93617,forecast
+2027-09-30,West Bengal,78.27235,forecast
+2027-10-31,West Bengal,80.70651,forecast
+2027-11-30,West Bengal,78.63238,forecast
+2027-12-31,West Bengal,76.798004,forecast
+2028-01-31,West Bengal,76.33412,forecast
+2028-02-29,West Bengal,78.45646,forecast
+2028-03-31,West Bengal,82.74942,forecast
+2028-04-30,West Bengal,79.84353,forecast
+2028-05-31,West Bengal,73.92504,forecast
+2028-06-30,West Bengal,74.41355,forecast
+2028-07-31,West Bengal,80.12125,forecast
+2028-08-31,West Bengal,77.93617,forecast
+2028-09-30,West Bengal,78.27235,forecast
+2028-10-31,West Bengal,80.70651,forecast
+2028-11-30,West Bengal,78.63238,forecast
+2028-12-31,West Bengal,76.798004,forecast
+2029-01-31,West Bengal,76.33412,forecast
+2029-02-28,West Bengal,78.45646,forecast
+2029-03-31,West Bengal,82.74942,forecast
+2029-04-30,West Bengal,79.84353,forecast
+2029-05-31,West Bengal,73.92504,forecast
+2029-06-30,West Bengal,74.41355,forecast
+2029-07-31,West Bengal,80.12125,forecast
+2029-08-31,West Bengal,77.93617,forecast
+2029-09-30,West Bengal,78.27235,forecast
+2029-10-31,West Bengal,80.70651,forecast
+2029-11-30,West Bengal,78.63238,forecast
+2029-12-31,West Bengal,76.798004,forecast
+2030-01-31,West Bengal,76.33412,forecast
+2030-02-28,West Bengal,78.45646,forecast
+2030-03-31,West Bengal,82.74942,forecast
+2030-04-30,West Bengal,79.84353,forecast
+2030-05-31,West Bengal,73.92504,forecast
+2030-06-30,West Bengal,74.41355,forecast
+2030-07-31,West Bengal,80.12125,forecast
+2030-08-31,West Bengal,77.93617,forecast
+2030-09-30,West Bengal,78.27235,forecast
+2030-10-31,West Bengal,80.70651,forecast
+2030-11-30,West Bengal,78.63238,forecast
+2030-12-31,West Bengal,76.798004,forecast
+2026-01-31,Uttar Pradesh,732.69507,forecast
+2026-02-28,Uttar Pradesh,391.53802,forecast
+2026-03-31,Uttar Pradesh,427.68518,forecast
+2026-04-30,Uttar Pradesh,423.6516,forecast
+2026-05-31,Uttar Pradesh,394.97363,forecast
+2026-06-30,Uttar Pradesh,404.34094,forecast
+2026-07-31,Uttar Pradesh,391.19858,forecast
+2026-08-31,Uttar Pradesh,384.9422,forecast
+2026-09-30,Uttar Pradesh,389.60855,forecast
+2026-10-31,Uttar Pradesh,392.26688,forecast
+2026-11-30,Uttar Pradesh,391.19656,forecast
+2026-12-31,Uttar Pradesh,379.2181,forecast
+2027-01-31,Uttar Pradesh,373.1268,forecast
+2027-02-28,Uttar Pradesh,374.32047,forecast
+2027-03-31,Uttar Pradesh,382.011,forecast
+2027-04-30,Uttar Pradesh,375.0642,forecast
+2027-05-31,Uttar Pradesh,381.70212,forecast
+2027-06-30,Uttar Pradesh,378.69492,forecast
+2027-07-31,Uttar Pradesh,379.43756,forecast
+2027-08-31,Uttar Pradesh,384.9422,forecast
+2027-09-30,Uttar Pradesh,380.9009,forecast
+2027-10-31,Uttar Pradesh,389.05148,forecast
+2027-11-30,Uttar Pradesh,391.19656,forecast
+2027-12-31,Uttar Pradesh,379.2181,forecast
+2028-01-31,Uttar Pradesh,373.1268,forecast
+2028-02-29,Uttar Pradesh,374.32047,forecast
+2028-03-31,Uttar Pradesh,382.011,forecast
+2028-04-30,Uttar Pradesh,375.0642,forecast
+2028-05-31,Uttar Pradesh,381.70212,forecast
+2028-06-30,Uttar Pradesh,378.69492,forecast
+2028-07-31,Uttar Pradesh,379.43756,forecast
+2028-08-31,Uttar Pradesh,384.9422,forecast
+2028-09-30,Uttar Pradesh,380.9009,forecast
+2028-10-31,Uttar Pradesh,389.05148,forecast
+2028-11-30,Uttar Pradesh,391.19656,forecast
+2028-12-31,Uttar Pradesh,379.2181,forecast
+2029-01-31,Uttar Pradesh,373.1268,forecast
+2029-02-28,Uttar Pradesh,374.32047,forecast
+2029-03-31,Uttar Pradesh,382.011,forecast
+2029-04-30,Uttar Pradesh,375.0642,forecast
+2029-05-31,Uttar Pradesh,381.70212,forecast
+2029-06-30,Uttar Pradesh,378.69492,forecast
+2029-07-31,Uttar Pradesh,379.43756,forecast
+2029-08-31,Uttar Pradesh,384.9422,forecast
+2029-09-30,Uttar Pradesh,380.9009,forecast
+2029-10-31,Uttar Pradesh,389.05148,forecast
+2029-11-30,Uttar Pradesh,391.19656,forecast
+2029-12-31,Uttar Pradesh,379.2181,forecast
+2030-01-31,Uttar Pradesh,373.1268,forecast
+2030-02-28,Uttar Pradesh,374.32047,forecast
+2030-03-31,Uttar Pradesh,382.011,forecast
+2030-04-30,Uttar Pradesh,375.0642,forecast
+2030-05-31,Uttar Pradesh,381.70212,forecast
+2030-06-30,Uttar Pradesh,378.69492,forecast
+2030-07-31,Uttar Pradesh,379.43756,forecast
+2030-08-31,Uttar Pradesh,384.9422,forecast
+2030-09-30,Uttar Pradesh,380.9009,forecast
+2030-10-31,Uttar Pradesh,389.05148,forecast
+2030-11-30,Uttar Pradesh,391.19656,forecast
+2030-12-31,Uttar Pradesh,379.2181,forecast
+2026-01-31,Delhi,81.60057,forecast
+2026-02-28,Delhi,61.318214,forecast
+2026-03-31,Delhi,78.674225,forecast
+2026-04-30,Delhi,63.064697,forecast
+2026-05-31,Delhi,68.56587,forecast
+2026-06-30,Delhi,71.522804,forecast
+2026-07-31,Delhi,78.6369,forecast
+2026-08-31,Delhi,72.01392,forecast
+2026-09-30,Delhi,78.46878,forecast
+2026-10-31,Delhi,74.82029,forecast
+2026-11-30,Delhi,73.00598,forecast
+2026-12-31,Delhi,74.46475,forecast
+2027-01-31,Delhi,69.67106,forecast
+2027-02-28,Delhi,75.132645,forecast
+2027-03-31,Delhi,77.331635,forecast
+2027-04-30,Delhi,71.94576,forecast
+2027-05-31,Delhi,69.94039,forecast
+2027-06-30,Delhi,78.31971,forecast
+2027-07-31,Delhi,69.48116,forecast
+2027-08-31,Delhi,84.46831,forecast
+2027-09-30,Delhi,79.798996,forecast
+2027-10-31,Delhi,71.04486,forecast
+2027-11-30,Delhi,74.946945,forecast
+2027-12-31,Delhi,78.993706,forecast
+2028-01-31,Delhi,65.9546,forecast
+2028-02-29,Delhi,81.35318,forecast
+2028-03-31,Delhi,80.32271,forecast
+2028-04-30,Delhi,69.26064,forecast
+2028-05-31,Delhi,75.797806,forecast
+2028-06-30,Delhi,70.89062,forecast
+2028-07-31,Delhi,72.432205,forecast
+2028-08-31,Delhi,81.19796,forecast
+2028-09-30,Delhi,77.954185,forecast
+2028-10-31,Delhi,72.17674,forecast
+2028-11-30,Delhi,77.35313,forecast
+2028-12-31,Delhi,72.37771,forecast
+2029-01-31,Delhi,68.21788,forecast
+2029-02-28,Delhi,83.63299,forecast
+2029-03-31,Delhi,78.30864,forecast
+2029-04-30,Delhi,69.84179,forecast
+2029-05-31,Delhi,76.64317,forecast
+2029-06-30,Delhi,68.13284,forecast
+2029-07-31,Delhi,79.23841,forecast
+2029-08-31,Delhi,77.30824,forecast
+2029-09-30,Delhi,76.3409,forecast
+2029-10-31,Delhi,74.79609,forecast
+2029-11-30,Delhi,79.67583,forecast
+2029-12-31,Delhi,70.65399,forecast
+2030-01-31,Delhi,71.4291,forecast
+2030-02-28,Delhi,75.52618,forecast
+2030-03-31,Delhi,78.272415,forecast
+2030-04-30,Delhi,71.94576,forecast
+2030-05-31,Delhi,72.08763,forecast
+2030-06-30,Delhi,69.06863,forecast
+2030-07-31,Delhi,79.23841,forecast
+2030-08-31,Delhi,73.57919,forecast
+2030-09-30,Delhi,76.95114,forecast
+2030-10-31,Delhi,74.79609,forecast
+2030-11-30,Delhi,72.38191,forecast
+2030-12-31,Delhi,74.51515,forecast
+2026-01-31,Tamil Nadu,177.3356,forecast
+2026-02-28,Tamil Nadu,189.55728,forecast
+2026-03-31,Tamil Nadu,186.6214,forecast
+2026-04-30,Tamil Nadu,191.89207,forecast
+2026-05-31,Tamil Nadu,187.01068,forecast
+2026-06-30,Tamil Nadu,187.62402,forecast
+2026-07-31,Tamil Nadu,153.03844,forecast
+2026-08-31,Tamil Nadu,156.11539,forecast
+2026-09-30,Tamil Nadu,156.6034,forecast
+2026-10-31,Tamil Nadu,159.6473,forecast
+2026-11-30,Tamil Nadu,154.71294,forecast
+2026-12-31,Tamil Nadu,145.90881,forecast
+2027-01-31,Tamil Nadu,170.56055,forecast
+2027-02-28,Tamil Nadu,171.92987,forecast
+2027-03-31,Tamil Nadu,175.18678,forecast
+2027-04-30,Tamil Nadu,165.7071,forecast
+2027-05-31,Tamil Nadu,164.8783,forecast
+2027-06-30,Tamil Nadu,160.22331,forecast
+2027-07-31,Tamil Nadu,160.81245,forecast
+2027-08-31,Tamil Nadu,162.31512,forecast
+2027-09-30,Tamil Nadu,162.16396,forecast
+2027-10-31,Tamil Nadu,169.26085,forecast
+2027-11-30,Tamil Nadu,165.58885,forecast
+2027-12-31,Tamil Nadu,162.7978,forecast
+2028-01-31,Tamil Nadu,172.86221,forecast
+2028-02-29,Tamil Nadu,171.56357,forecast
+2028-03-31,Tamil Nadu,174.72937,forecast
+2028-04-30,Tamil Nadu,156.37906,forecast
+2028-05-31,Tamil Nadu,164.43584,forecast
+2028-06-30,Tamil Nadu,160.42563,forecast
+2028-07-31,Tamil Nadu,160.10104,forecast
+2028-08-31,Tamil Nadu,162.31512,forecast
+2028-09-30,Tamil Nadu,162.5924,forecast
+2028-10-31,Tamil Nadu,169.91403,forecast
+2028-11-30,Tamil Nadu,165.58885,forecast
+2028-12-31,Tamil Nadu,162.7978,forecast
+2029-01-31,Tamil Nadu,172.86221,forecast
+2029-02-28,Tamil Nadu,171.56357,forecast
+2029-03-31,Tamil Nadu,174.72937,forecast
+2029-04-30,Tamil Nadu,156.37906,forecast
+2029-05-31,Tamil Nadu,164.43584,forecast
+2029-06-30,Tamil Nadu,160.42563,forecast
+2029-07-31,Tamil Nadu,160.10104,forecast
+2029-08-31,Tamil Nadu,162.31512,forecast
+2029-09-30,Tamil Nadu,162.5924,forecast
+2029-10-31,Tamil Nadu,169.91403,forecast
+2029-11-30,Tamil Nadu,165.58885,forecast
+2029-12-31,Tamil Nadu,162.7978,forecast
+2030-01-31,Tamil Nadu,172.86221,forecast
+2030-02-28,Tamil Nadu,171.56357,forecast
+2030-03-31,Tamil Nadu,174.72937,forecast
+2030-04-30,Tamil Nadu,156.37906,forecast
+2030-05-31,Tamil Nadu,164.43584,forecast
+2030-06-30,Tamil Nadu,160.42563,forecast
+2030-07-31,Tamil Nadu,160.10104,forecast
+2030-08-31,Tamil Nadu,162.31512,forecast
+2030-09-30,Tamil Nadu,162.5924,forecast
+2030-10-31,Tamil Nadu,169.91403,forecast
+2030-11-30,Tamil Nadu,165.58885,forecast
+2030-12-31,Tamil Nadu,162.7978,forecast
+2026-01-31,Rajasthan,155.72275,forecast
+2026-02-28,Rajasthan,153.62735,forecast
+2026-03-31,Rajasthan,154.48824,forecast
+2026-04-30,Rajasthan,158.13338,forecast
+2026-05-31,Rajasthan,157.59804,forecast
+2026-06-30,Rajasthan,155.82722,forecast
+2026-07-31,Rajasthan,150.00732,forecast
+2026-08-31,Rajasthan,149.65582,forecast
+2026-09-30,Rajasthan,151.03459,forecast
+2026-10-31,Rajasthan,153.35413,forecast
+2026-11-30,Rajasthan,151.92313,forecast
+2026-12-31,Rajasthan,148.75232,forecast
+2027-01-31,Rajasthan,155.34161,forecast
+2027-02-28,Rajasthan,156.22705,forecast
+2027-03-31,Rajasthan,159.6626,forecast
+2027-04-30,Rajasthan,152.05139,forecast
+2027-05-31,Rajasthan,149.67487,forecast
+2027-06-30,Rajasthan,144.19423,forecast
+2027-07-31,Rajasthan,147.153,forecast
+2027-08-31,Rajasthan,149.65582,forecast
+2027-09-30,Rajasthan,150.59799,forecast
+2027-10-31,Rajasthan,150.4998,forecast
+2027-11-30,Rajasthan,149.601,forecast
+2027-12-31,Rajasthan,154.9047,forecast
+2028-01-31,Rajasthan,155.79698,forecast
+2028-02-29,Rajasthan,156.22705,forecast
+2028-03-31,Rajasthan,159.6626,forecast
+2028-04-30,Rajasthan,152.05139,forecast
+2028-05-31,Rajasthan,149.67487,forecast
+2028-06-30,Rajasthan,145.04973,forecast
+2028-07-31,Rajasthan,147.153,forecast
+2028-08-31,Rajasthan,149.65582,forecast
+2028-09-30,Rajasthan,151.94086,forecast
+2028-10-31,Rajasthan,153.35413,forecast
+2028-11-30,Rajasthan,151.92313,forecast
+2028-12-31,Rajasthan,148.75232,forecast
+2029-01-31,Rajasthan,154.48611,forecast
+2029-02-28,Rajasthan,156.22705,forecast
+2029-03-31,Rajasthan,159.6626,forecast
+2029-04-30,Rajasthan,152.05139,forecast
+2029-05-31,Rajasthan,149.67487,forecast
+2029-06-30,Rajasthan,144.19423,forecast
+2029-07-31,Rajasthan,147.153,forecast
+2029-08-31,Rajasthan,149.65582,forecast
+2029-09-30,Rajasthan,150.59799,forecast
+2029-10-31,Rajasthan,150.4998,forecast
+2029-11-30,Rajasthan,149.601,forecast
+2029-12-31,Rajasthan,154.9047,forecast
+2030-01-31,Rajasthan,155.79698,forecast
+2030-02-28,Rajasthan,156.22705,forecast
+2030-03-31,Rajasthan,159.6626,forecast
+2030-04-30,Rajasthan,152.05139,forecast
+2030-05-31,Rajasthan,149.67487,forecast
+2030-06-30,Rajasthan,145.04973,forecast
+2030-07-31,Rajasthan,147.153,forecast
+2030-08-31,Rajasthan,149.65582,forecast
+2030-09-30,Rajasthan,151.94086,forecast
+2030-10-31,Rajasthan,153.35413,forecast
+2030-11-30,Rajasthan,151.92313,forecast
+2030-12-31,Rajasthan,148.75232,forecast
+2026-01-31,Karnataka,208.08139,forecast
+2026-02-28,Karnataka,239.12956,forecast
+2026-03-31,Karnataka,231.13742,forecast
+2026-04-30,Karnataka,251.09732,forecast
+2026-05-31,Karnataka,250.9997,forecast
+2026-06-30,Karnataka,248.4263,forecast
+2026-07-31,Karnataka,212.32945,forecast
+2026-08-31,Karnataka,219.50984,forecast
+2026-09-30,Karnataka,219.91092,forecast
+2026-10-31,Karnataka,223.39946,forecast
+2026-11-30,Karnataka,223.39946,forecast
+2026-12-31,Karnataka,189.33002,forecast
+2027-01-31,Karnataka,221.97333,forecast
+2027-02-28,Karnataka,227.16103,forecast
+2027-03-31,Karnataka,223.68471,forecast
+2027-04-30,Karnataka,224.62474,forecast
+2027-05-31,Karnataka,219.02518,forecast
+2027-06-30,Karnataka,198.65172,forecast
+2027-07-31,Karnataka,224.66046,forecast
+2027-08-31,Karnataka,229.03212,forecast
+2027-09-30,Karnataka,224.08253,forecast
+2027-10-31,Karnataka,226.00163,forecast
+2027-11-30,Karnataka,213.75449,forecast
+2027-12-31,Karnataka,179.74133,forecast
+2028-01-31,Karnataka,222.14932,forecast
+2028-02-29,Karnataka,227.44846,forecast
+2028-03-31,Karnataka,224.50323,forecast
+2028-04-30,Karnataka,224.62474,forecast
+2028-05-31,Karnataka,213.48125,forecast
+2028-06-30,Karnataka,201.52837,forecast
+2028-07-31,Karnataka,222.33263,forecast
+2028-08-31,Karnataka,229.03212,forecast
+2028-09-30,Karnataka,224.08253,forecast
+2028-10-31,Karnataka,226.00163,forecast
+2028-11-30,Karnataka,209.457,forecast
+2028-12-31,Karnataka,179.46747,forecast
+2029-01-31,Karnataka,222.14932,forecast
+2029-02-28,Karnataka,227.63054,forecast
+2029-03-31,Karnataka,224.50323,forecast
+2029-04-30,Karnataka,224.62474,forecast
+2029-05-31,Karnataka,213.48125,forecast
+2029-06-30,Karnataka,201.52837,forecast
+2029-07-31,Karnataka,222.33263,forecast
+2029-08-31,Karnataka,229.03212,forecast
+2029-09-30,Karnataka,224.08253,forecast
+2029-10-31,Karnataka,226.00163,forecast
+2029-11-30,Karnataka,209.457,forecast
+2029-12-31,Karnataka,179.46747,forecast
+2030-01-31,Karnataka,222.14932,forecast
+2030-02-28,Karnataka,227.63054,forecast
+2030-03-31,Karnataka,224.50323,forecast
+2030-04-30,Karnataka,224.62474,forecast
+2030-05-31,Karnataka,213.48125,forecast
+2030-06-30,Karnataka,201.52837,forecast
+2030-07-31,Karnataka,222.33263,forecast
+2030-08-31,Karnataka,229.03212,forecast
+2030-09-30,Karnataka,224.08253,forecast
+2030-10-31,Karnataka,226.00163,forecast
+2030-11-30,Karnataka,209.457,forecast
+2030-12-31,Karnataka,179.46747,forecast
+2026-01-31,Madhya Pradesh,219.97548,forecast
+2026-02-28,Madhya Pradesh,221.28278,forecast
+2026-03-31,Madhya Pradesh,209.84828,forecast
+2026-04-30,Madhya Pradesh,221.80849,forecast
+2026-05-31,Madhya Pradesh,219.97186,forecast
+2026-06-30,Madhya Pradesh,217.58054,forecast
+2026-07-31,Madhya Pradesh,221.86113,forecast
+2026-08-31,Madhya Pradesh,228.2136,forecast
+2026-09-30,Madhya Pradesh,217.81427,forecast
+2026-10-31,Madhya Pradesh,225.1831,forecast
+2026-11-30,Madhya Pradesh,213.75449,forecast
+2026-12-31,Madhya Pradesh,188.24548,forecast
+2027-01-31,Madhya Pradesh,223.4321,forecast
+2027-02-28,Madhya Pradesh,227.97957,forecast
+2027-03-31,Madhya Pradesh,218.9593,forecast
+2027-04-30,Madhya Pradesh,224.62474,forecast
+2027-05-31,Madhya Pradesh,213.48125,forecast
+2027-06-30,Madhya Pradesh,198.43764,forecast
+2027-07-31,Madhya Pradesh,225.47899,forecast
+2027-08-31,Madhya Pradesh,223.69748,forecast
+2027-09-30,Madhya Pradesh,228.59863,forecast
+2027-10-31,Madhya Pradesh,214.57303,forecast
+2027-11-30,Madhya Pradesh,220.88559,forecast
+2027-12-31,Madhya Pradesh,173.86145,forecast
+2028-01-31,Madhya Pradesh,232.39738,forecast
+2028-02-29,Madhya Pradesh,222.64493,forecast
+2028-03-31,Madhya Pradesh,231.05118,forecast
+2028-04-30,Madhya Pradesh,209.4724,forecast
+2028-05-31,Madhya Pradesh,222.26634,forecast
+2028-06-30,Madhya Pradesh,197.46867,forecast
+2028-07-31,Madhya Pradesh,225.82764,forecast
+2028-08-31,Madhya Pradesh,223.69748,forecast
+2028-09-30,Madhya Pradesh,229.41718,forecast
+2028-10-31,Madhya Pradesh,209.457,forecast
+2028-11-30,Madhya Pradesh,225.78755,forecast
+2028-12-31,Madhya Pradesh,168.52682,forecast
+2029-01-31,Madhya Pradesh,234.72125,forecast
+2029-02-28,Madhya Pradesh,218.05273,forecast
+2029-03-31,Madhya Pradesh,234.02325,forecast
+2029-04-30,Madhya Pradesh,209.4724,forecast
+2029-05-31,Madhya Pradesh,223.08487,forecast
+2029-06-30,Madhya Pradesh,201.68242,forecast
+2029-07-31,Madhya Pradesh,222.68127,forecast
+2029-08-31,Madhya Pradesh,228.2136,forecast
+2029-09-30,Madhya Pradesh,224.08253,forecast
+2029-10-31,Madhya Pradesh,220.88559,forecast
+2029-11-30,Madhya Pradesh,219.90767,forecast
+2029-12-31,Madhya Pradesh,179.68155,forecast
+2030-01-31,Madhya Pradesh,228.423,forecast
+2030-02-28,Madhya Pradesh,222.64493,forecast
+2030-03-31,Madhya Pradesh,229.83788,forecast
+2030-04-30,Madhya Pradesh,214.1978,forecast
+2030-05-31,Madhya Pradesh,222.48042,forecast
+2030-06-30,Madhya Pradesh,197.46867,forecast
+2030-07-31,Madhya Pradesh,225.47899,forecast
+2030-08-31,Madhya Pradesh,223.69748,forecast
+2030-09-30,Madhya Pradesh,229.41718,forecast
+2030-10-31,Madhya Pradesh,209.457,forecast
+2030-11-30,Madhya Pradesh,225.78755,forecast
+2030-12-31,Madhya Pradesh,168.52682,forecast
+2026-01-31,Maharashtra,529.99347,forecast
+2026-02-28,Maharashtra,278.3831,forecast
+2026-03-31,Maharashtra,348.38998,forecast
+2026-04-30,Maharashtra,345.691,forecast
+2026-05-31,Maharashtra,332.37762,forecast
+2026-06-30,Maharashtra,336.21555,forecast
+2026-07-31,Maharashtra,343.38538,forecast
+2026-08-31,Maharashtra,326.18878,forecast
+2026-09-30,Maharashtra,342.27548,forecast
+2026-10-31,Maharashtra,325.9679,forecast
+2026-11-30,Maharashtra,337.5268,forecast
+2026-12-31,Maharashtra,311.2097,forecast
+2027-01-31,Maharashtra,323.21176,forecast
+2027-02-28,Maharashtra,327.53,forecast
+2027-03-31,Maharashtra,327.15735,forecast
+2027-04-30,Maharashtra,338.84622,forecast
+2027-05-31,Maharashtra,346.74054,forecast
+2027-06-30,Maharashtra,331.60025,forecast
+2027-07-31,Maharashtra,341.84552,forecast
+2027-08-31,Maharashtra,345.2428,forecast
+2027-09-30,Maharashtra,338.5103,forecast
+2027-10-31,Maharashtra,334.0446,forecast
+2027-11-30,Maharashtra,333.40723,forecast
+2027-12-31,Maharashtra,310.1329,forecast
+2028-01-31,Maharashtra,326.23618,forecast
+2028-02-29,Maharashtra,324.69656,forecast
+2028-03-31,Maharashtra,329.99072,forecast
+2028-04-30,Maharashtra,338.84622,forecast
+2028-05-31,Maharashtra,346.74054,forecast
+2028-06-30,Maharashtra,331.60025,forecast
+2028-07-31,Maharashtra,341.84552,forecast
+2028-08-31,Maharashtra,345.2428,forecast
+2028-09-30,Maharashtra,338.5103,forecast
+2028-10-31,Maharashtra,334.0446,forecast
+2028-11-30,Maharashtra,333.40723,forecast
+2028-12-31,Maharashtra,310.1329,forecast
+2029-01-31,Maharashtra,326.23618,forecast
+2029-02-28,Maharashtra,324.69656,forecast
+2029-03-31,Maharashtra,329.99072,forecast
+2029-04-30,Maharashtra,338.84622,forecast
+2029-05-31,Maharashtra,346.74054,forecast
+2029-06-30,Maharashtra,331.60025,forecast
+2029-07-31,Maharashtra,341.84552,forecast
+2029-08-31,Maharashtra,345.2428,forecast
+2029-09-30,Maharashtra,338.5103,forecast
+2029-10-31,Maharashtra,334.0446,forecast
+2029-11-30,Maharashtra,333.40723,forecast
+2029-12-31,Maharashtra,310.1329,forecast
+2030-01-31,Maharashtra,326.23618,forecast
+2030-02-28,Maharashtra,324.69656,forecast
+2030-03-31,Maharashtra,329.99072,forecast
+2030-04-30,Maharashtra,338.84622,forecast
+2030-05-31,Maharashtra,346.74054,forecast
+2030-06-30,Maharashtra,331.60025,forecast
+2030-07-31,Maharashtra,341.84552,forecast
+2030-08-31,Maharashtra,345.2428,forecast
+2030-09-30,Maharashtra,338.5103,forecast
+2030-10-31,Maharashtra,334.0446,forecast
+2030-11-30,Maharashtra,333.40723,forecast
+2030-12-31,Maharashtra,310.1329,forecast
+2026-01-31,Jharkhand,20.80712,forecast
+2026-02-28,Jharkhand,18.293169,forecast
+2026-03-31,Jharkhand,25.452328,forecast
+2026-04-30,Jharkhand,22.69009,forecast
+2026-05-31,Jharkhand,21.263044,forecast
+2026-06-30,Jharkhand,21.788727,forecast
+2026-07-31,Jharkhand,24.30838,forecast
+2026-08-31,Jharkhand,26.173439,forecast
+2026-09-30,Jharkhand,25.601654,forecast
+2026-10-31,Jharkhand,25.965927,forecast
+2026-11-30,Jharkhand,26.630928,forecast
+2026-12-31,Jharkhand,26.569973,forecast
+2027-01-31,Jharkhand,19.927122,forecast
+2027-02-28,Jharkhand,17.923714,forecast
+2027-03-31,Jharkhand,25.280699,forecast
+2027-04-30,Jharkhand,22.593315,forecast
+2027-05-31,Jharkhand,21.75338,forecast
+2027-06-30,Jharkhand,22.035423,forecast
+2027-07-31,Jharkhand,24.814688,forecast
+2027-08-31,Jharkhand,26.173439,forecast
+2027-09-30,Jharkhand,25.601654,forecast
+2027-10-31,Jharkhand,25.965927,forecast
+2027-11-30,Jharkhand,26.630928,forecast
+2027-12-31,Jharkhand,26.569973,forecast
+2028-01-31,Jharkhand,19.927122,forecast
+2028-02-29,Jharkhand,17.923714,forecast
+2028-03-31,Jharkhand,25.280699,forecast
+2028-04-30,Jharkhand,22.593315,forecast
+2028-05-31,Jharkhand,21.75338,forecast
+2028-06-30,Jharkhand,22.035423,forecast
+2028-07-31,Jharkhand,24.814688,forecast
+2028-08-31,Jharkhand,26.173439,forecast
+2028-09-30,Jharkhand,25.601654,forecast
+2028-10-31,Jharkhand,25.965927,forecast
+2028-11-30,Jharkhand,26.630928,forecast
+2028-12-31,Jharkhand,26.569973,forecast
+2029-01-31,Jharkhand,19.927122,forecast
+2029-02-28,Jharkhand,17.923714,forecast
+2029-03-31,Jharkhand,25.280699,forecast
+2029-04-30,Jharkhand,22.593315,forecast
+2029-05-31,Jharkhand,21.75338,forecast
+2029-06-30,Jharkhand,22.035423,forecast
+2029-07-31,Jharkhand,24.814688,forecast
+2029-08-31,Jharkhand,26.173439,forecast
+2029-09-30,Jharkhand,25.601654,forecast
+2029-10-31,Jharkhand,25.965927,forecast
+2029-11-30,Jharkhand,26.630928,forecast
+2029-12-31,Jharkhand,26.569973,forecast
+2030-01-31,Jharkhand,19.927122,forecast
+2030-02-28,Jharkhand,17.923714,forecast
+2030-03-31,Jharkhand,25.280699,forecast
+2030-04-30,Jharkhand,22.593315,forecast
+2030-05-31,Jharkhand,21.75338,forecast
+2030-06-30,Jharkhand,22.035423,forecast
+2030-07-31,Jharkhand,24.814688,forecast
+2030-08-31,Jharkhand,26.173439,forecast
+2030-09-30,Jharkhand,25.601654,forecast
+2030-10-31,Jharkhand,25.965927,forecast
+2030-11-30,Jharkhand,26.630928,forecast
+2030-12-31,Jharkhand,26.569973,forecast
+2026-01-31,Bihar,170.95084,forecast
+2026-02-28,Bihar,221.1381,forecast
+2026-03-31,Bihar,218.69218,forecast
+2026-04-30,Bihar,210.16086,forecast
+2026-05-31,Bihar,212.5012,forecast
+2026-06-30,Bihar,209.9278,forecast
+2026-07-31,Bihar,196.87282,forecast
+2026-08-31,Bihar,232.53064,forecast
+2026-09-30,Bihar,230.75012,forecast
+2026-10-31,Bihar,227.5275,forecast
+2026-11-30,Bihar,221.67114,forecast
+2026-12-31,Bihar,208.08257,forecast
+2027-01-31,Bihar,190.87654,forecast
+2027-02-28,Bihar,228.11157,forecast
+2027-03-31,Bihar,228.57956,forecast
+2027-04-30,Bihar,225.74937,forecast
+2027-05-31,Bihar,221.29211,forecast
+2027-06-30,Bihar,221.2407,forecast
+2027-07-31,Bihar,190.4731,forecast
+2027-08-31,Bihar,233.36559,forecast
+2027-09-30,Bihar,230.43285,forecast
+2027-10-31,Bihar,230.74721,forecast
+2027-11-30,Bihar,224.0559,forecast
+2027-12-31,Bihar,211.06754,forecast
+2028-01-31,Bihar,190.21083,forecast
+2028-02-29,Bihar,228.11157,forecast
+2028-03-31,Bihar,228.39748,forecast
+2028-04-30,Bihar,225.74937,forecast
+2028-05-31,Bihar,222.12706,forecast
+2028-06-30,Bihar,221.2407,forecast
+2028-07-31,Bihar,190.4731,forecast
+2028-08-31,Bihar,233.36559,forecast
+2028-09-30,Bihar,230.43285,forecast
+2028-10-31,Bihar,230.74721,forecast
+2028-11-30,Bihar,224.89084,forecast
+2028-12-31,Bihar,211.06754,forecast
+2029-01-31,Bihar,190.21083,forecast
+2029-02-28,Bihar,228.11157,forecast
+2029-03-31,Bihar,228.39748,forecast
+2029-04-30,Bihar,225.74937,forecast
+2029-05-31,Bihar,222.12706,forecast
+2029-06-30,Bihar,221.2407,forecast
+2029-07-31,Bihar,190.4731,forecast
+2029-08-31,Bihar,233.36559,forecast
+2029-09-30,Bihar,230.43285,forecast
+2029-10-31,Bihar,230.74721,forecast
+2029-11-30,Bihar,224.89084,forecast
+2029-12-31,Bihar,211.06754,forecast
+2030-01-31,Bihar,190.21083,forecast
+2030-02-28,Bihar,228.11157,forecast
+2030-03-31,Bihar,228.39748,forecast
+2030-04-30,Bihar,225.74937,forecast
+2030-05-31,Bihar,222.12706,forecast
+2030-06-30,Bihar,221.2407,forecast
+2030-07-31,Bihar,190.4731,forecast
+2030-08-31,Bihar,233.36559,forecast
+2030-09-30,Bihar,230.43285,forecast
+2030-10-31,Bihar,230.74721,forecast
+2030-11-30,Bihar,224.89084,forecast
+2030-12-31,Bihar,211.06754,forecast
+2026-01-31,Assam,92.23566,forecast
+2026-02-28,Assam,68.72008,forecast
+2026-03-31,Assam,73.57848,forecast
+2026-04-30,Assam,64.09745,forecast
+2026-05-31,Assam,68.132866,forecast
+2026-06-30,Assam,67.06571,forecast
+2026-07-31,Assam,77.67631,forecast
+2026-08-31,Assam,71.00553,forecast
+2026-09-30,Assam,76.47684,forecast
+2026-10-31,Assam,71.14799,forecast
+2026-11-30,Assam,73.37664,forecast
+2026-12-31,Assam,69.92415,forecast
+2027-01-31,Assam,69.88443,forecast
+2027-02-28,Assam,64.99082,forecast
+2027-03-31,Assam,77.64343,forecast
+2027-04-30,Assam,65.17133,forecast
+2027-05-31,Assam,68.82151,forecast
+2027-06-30,Assam,65.06277,forecast
+2027-07-31,Assam,73.2958,forecast
+2027-08-31,Assam,71.61578,forecast
+2027-09-30,Assam,76.52793,forecast
+2027-10-31,Assam,69.7831,forecast
+2027-11-30,Assam,75.830055,forecast
+2027-12-31,Assam,68.903564,forecast
+2028-01-31,Assam,69.13981,forecast
+2028-02-29,Assam,63.63718,forecast
+2028-03-31,Assam,77.64343,forecast
+2028-04-30,Assam,65.17133,forecast
+2028-05-31,Assam,68.82151,forecast
+2028-06-30,Assam,65.06277,forecast
+2028-07-31,Assam,73.2958,forecast
+2028-08-31,Assam,71.61578,forecast
+2028-09-30,Assam,76.52793,forecast
+2028-10-31,Assam,69.7831,forecast
+2028-11-30,Assam,75.830055,forecast
+2028-12-31,Assam,68.903564,forecast
+2029-01-31,Assam,69.13981,forecast
+2029-02-28,Assam,63.63718,forecast
+2029-03-31,Assam,77.64343,forecast
+2029-04-30,Assam,65.17133,forecast
+2029-05-31,Assam,68.82151,forecast
+2029-06-30,Assam,65.06277,forecast
+2029-07-31,Assam,73.2958,forecast
+2029-08-31,Assam,71.61578,forecast
+2029-09-30,Assam,76.52793,forecast
+2029-10-31,Assam,69.7831,forecast
+2029-11-30,Assam,75.830055,forecast
+2029-12-31,Assam,68.903564,forecast
+2030-01-31,Assam,69.13981,forecast
+2030-02-28,Assam,63.63718,forecast
+2030-03-31,Assam,77.64343,forecast
+2030-04-30,Assam,65.17133,forecast
+2030-05-31,Assam,68.82151,forecast
+2030-06-30,Assam,65.06277,forecast
+2030-07-31,Assam,73.2958,forecast
+2030-08-31,Assam,71.61578,forecast
+2030-09-30,Assam,76.52793,forecast
+2030-10-31,Assam,69.7831,forecast
+2030-11-30,Assam,75.830055,forecast
+2030-12-31,Assam,68.903564,forecast
+2026-01-31,Kerala,149.94531,forecast
+2026-02-28,Kerala,129.40778,forecast
+2026-03-31,Kerala,139.23547,forecast
+2026-04-30,Kerala,135.95726,forecast
+2026-05-31,Kerala,138.70961,forecast
+2026-06-30,Kerala,138.30214,forecast
+2026-07-31,Kerala,137.06206,forecast
+2026-08-31,Kerala,147.32677,forecast
+2026-09-30,Kerala,144.24565,forecast
+2026-10-31,Kerala,145.23463,forecast
+2026-11-30,Kerala,142.82634,forecast
+2026-12-31,Kerala,137.3889,forecast
+2027-01-31,Kerala,148.886,forecast
+2027-02-28,Kerala,137.4403,forecast
+2027-03-31,Kerala,152.37175,forecast
+2027-04-30,Kerala,133.44995,forecast
+2027-05-31,Kerala,144.1873,forecast
+2027-06-30,Kerala,139.06387,forecast
+2027-07-31,Kerala,139.26022,forecast
+2027-08-31,Kerala,148.1493,forecast
+2027-09-30,Kerala,137.4697,forecast
+2027-10-31,Kerala,149.21521,forecast
+2027-11-30,Kerala,143.75345,forecast
+2027-12-31,Kerala,137.83548,forecast
+2028-01-31,Kerala,147.1778,forecast
+2028-02-29,Kerala,137.4403,forecast
+2028-03-31,Kerala,152.24661,forecast
+2028-04-30,Kerala,134.30545,forecast
+2028-05-31,Kerala,144.1873,forecast
+2028-06-30,Kerala,139.06387,forecast
+2028-07-31,Kerala,136.20656,forecast
+2028-08-31,Kerala,148.1493,forecast
+2028-09-30,Kerala,137.4697,forecast
+2028-10-31,Kerala,148.05319,forecast
+2028-11-30,Kerala,143.75345,forecast
+2028-12-31,Kerala,137.83548,forecast
+2029-01-31,Kerala,147.97975,forecast
+2029-02-28,Kerala,137.4403,forecast
+2029-03-31,Kerala,152.24661,forecast
+2029-04-30,Kerala,133.44995,forecast
+2029-05-31,Kerala,144.1873,forecast
+2029-06-30,Kerala,139.06387,forecast
+2029-07-31,Kerala,139.26022,forecast
+2029-08-31,Kerala,148.1493,forecast
+2029-09-30,Kerala,137.4697,forecast
+2029-10-31,Kerala,149.21521,forecast
+2029-11-30,Kerala,143.75345,forecast
+2029-12-31,Kerala,137.83548,forecast
+2030-01-31,Kerala,147.1778,forecast
+2030-02-28,Kerala,137.4403,forecast
+2030-03-31,Kerala,152.24661,forecast
+2030-04-30,Kerala,134.30545,forecast
+2030-05-31,Kerala,144.1873,forecast
+2030-06-30,Kerala,139.06387,forecast
+2030-07-31,Kerala,136.20656,forecast
+2030-08-31,Kerala,148.1493,forecast
+2030-09-30,Kerala,137.4697,forecast
+2030-10-31,Kerala,148.05319,forecast
+2030-11-30,Kerala,143.75345,forecast
+2030-12-31,Kerala,137.83548,forecast
+2026-01-31,Andhra Pradesh,95.54481,forecast
+2026-02-28,Andhra Pradesh,81.409515,forecast
+2026-03-31,Andhra Pradesh,85.4159,forecast
+2026-04-30,Andhra Pradesh,74.52897,forecast
+2026-05-31,Andhra Pradesh,69.142265,forecast
+2026-06-30,Andhra Pradesh,72.66853,forecast
+2026-07-31,Andhra Pradesh,73.38685,forecast
+2026-08-31,Andhra Pradesh,73.63225,forecast
+2026-09-30,Andhra Pradesh,71.95248,forecast
+2026-10-31,Andhra Pradesh,75.27912,forecast
+2026-11-30,Andhra Pradesh,70.36682,forecast
+2026-12-31,Andhra Pradesh,74.86304,forecast
+2027-01-31,Andhra Pradesh,70.3017,forecast
+2027-02-28,Andhra Pradesh,69.27456,forecast
+2027-03-31,Andhra Pradesh,75.0027,forecast
+2027-04-30,Andhra Pradesh,69.795235,forecast
+2027-05-31,Andhra Pradesh,68.66058,forecast
+2027-06-30,Andhra Pradesh,73.115845,forecast
+2027-07-31,Andhra Pradesh,68.9271,forecast
+2027-08-31,Andhra Pradesh,75.76191,forecast
+2027-09-30,Andhra Pradesh,71.65305,forecast
+2027-10-31,Andhra Pradesh,72.741974,forecast
+2027-11-30,Andhra Pradesh,73.79369,forecast
+2027-12-31,Andhra Pradesh,74.95683,forecast
+2028-01-31,Andhra Pradesh,63.942673,forecast
+2028-02-29,Andhra Pradesh,73.96086,forecast
+2028-03-31,Andhra Pradesh,70.27811,forecast
+2028-04-30,Andhra Pradesh,68.730095,forecast
+2028-05-31,Andhra Pradesh,70.413475,forecast
+2028-06-30,Andhra Pradesh,69.1207,forecast
+2028-07-31,Andhra Pradesh,74.70783,forecast
+2028-08-31,Andhra Pradesh,73.4439,forecast
+2028-09-30,Andhra Pradesh,69.9377,forecast
+2028-10-31,Andhra Pradesh,74.57491,forecast
+2028-11-30,Andhra Pradesh,70.67289,forecast
+2028-12-31,Andhra Pradesh,74.24567,forecast
+2029-01-31,Andhra Pradesh,67.36325,forecast
+2029-02-28,Andhra Pradesh,72.481514,forecast
+2029-03-31,Andhra Pradesh,71.795746,forecast
+2029-04-30,Andhra Pradesh,71.44114,forecast
+2029-05-31,Andhra Pradesh,65.45363,forecast
+2029-06-30,Andhra Pradesh,73.813995,forecast
+2029-07-31,Andhra Pradesh,68.04368,forecast
+2029-08-31,Andhra Pradesh,76.37928,forecast
+2029-09-30,Andhra Pradesh,67.951164,forecast
+2029-10-31,Andhra Pradesh,75.94893,forecast
+2029-11-30,Andhra Pradesh,73.56246,forecast
+2029-12-31,Andhra Pradesh,74.95683,forecast
+2030-01-31,Andhra Pradesh,66.08986,forecast
+2030-02-28,Andhra Pradesh,72.1364,forecast
+2030-03-31,Andhra Pradesh,70.91232,forecast
+2030-04-30,Andhra Pradesh,71.44114,forecast
+2030-05-31,Andhra Pradesh,68.78204,forecast
+2030-06-30,Andhra Pradesh,71.54339,forecast
+2030-07-31,Andhra Pradesh,70.66093,forecast
+2030-08-31,Andhra Pradesh,73.172325,forecast
+2030-09-30,Andhra Pradesh,69.9377,forecast
+2030-10-31,Andhra Pradesh,75.94893,forecast
+2030-11-30,Andhra Pradesh,69.784065,forecast
+2030-12-31,Andhra Pradesh,77.45262,forecast
+2026-01-31,Chhattisgarh,86.30493,forecast
+2026-02-28,Chhattisgarh,58.92145,forecast
+2026-03-31,Chhattisgarh,66.61232,forecast
+2026-04-30,Chhattisgarh,59.017174,forecast
+2026-05-31,Chhattisgarh,58.607464,forecast
+2026-06-30,Chhattisgarh,59.105774,forecast
+2026-07-31,Chhattisgarh,65.57325,forecast
+2026-08-31,Chhattisgarh,63.35306,forecast
+2026-09-30,Chhattisgarh,63.44848,forecast
+2026-10-31,Chhattisgarh,62.71468,forecast
+2026-11-30,Chhattisgarh,63.28061,forecast
+2026-12-31,Chhattisgarh,61.974213,forecast
+2027-01-31,Chhattisgarh,57.30209,forecast
+2027-02-28,Chhattisgarh,55.62635,forecast
+2027-03-31,Chhattisgarh,63.50275,forecast
+2027-04-30,Chhattisgarh,57.841026,forecast
+2027-05-31,Chhattisgarh,54.36345,forecast
+2027-06-30,Chhattisgarh,53.34093,forecast
+2027-07-31,Chhattisgarh,62.09391,forecast
+2027-08-31,Chhattisgarh,61.40659,forecast
+2027-09-30,Chhattisgarh,63.414234,forecast
+2027-10-31,Chhattisgarh,63.540085,forecast
+2027-11-30,Chhattisgarh,63.28061,forecast
+2027-12-31,Chhattisgarh,62.95927,forecast
+2028-01-31,Chhattisgarh,55.389847,forecast
+2028-02-29,Chhattisgarh,55.49217,forecast
+2028-03-31,Chhattisgarh,63.50275,forecast
+2028-04-30,Chhattisgarh,55.894547,forecast
+2028-05-31,Chhattisgarh,55.582703,forecast
+2028-06-30,Chhattisgarh,56.411884,forecast
+2028-07-31,Chhattisgarh,62.428814,forecast
+2028-08-31,Chhattisgarh,61.40659,forecast
+2028-09-30,Chhattisgarh,65.36069,forecast
+2028-10-31,Chhattisgarh,63.540085,forecast
+2028-11-30,Chhattisgarh,63.28061,forecast
+2028-12-31,Chhattisgarh,63.118923,forecast
+2029-01-31,Chhattisgarh,55.389847,forecast
+2029-02-28,Chhattisgarh,55.49217,forecast
+2029-03-31,Chhattisgarh,63.50275,forecast
+2029-04-30,Chhattisgarh,55.894547,forecast
+2029-05-31,Chhattisgarh,55.582703,forecast
+2029-06-30,Chhattisgarh,56.411884,forecast
+2029-07-31,Chhattisgarh,62.428814,forecast
+2029-08-31,Chhattisgarh,61.40659,forecast
+2029-09-30,Chhattisgarh,65.36069,forecast
+2029-10-31,Chhattisgarh,63.540085,forecast
+2029-11-30,Chhattisgarh,63.28061,forecast
+2029-12-31,Chhattisgarh,63.118923,forecast
+2030-01-31,Chhattisgarh,55.389847,forecast
+2030-02-28,Chhattisgarh,55.49217,forecast
+2030-03-31,Chhattisgarh,63.50275,forecast
+2030-04-30,Chhattisgarh,55.894547,forecast
+2030-05-31,Chhattisgarh,55.582703,forecast
+2030-06-30,Chhattisgarh,56.411884,forecast
+2030-07-31,Chhattisgarh,62.428814,forecast
+2030-08-31,Chhattisgarh,61.40659,forecast
+2030-09-30,Chhattisgarh,65.36069,forecast
+2030-10-31,Chhattisgarh,63.540085,forecast
+2030-11-30,Chhattisgarh,63.28061,forecast
+2030-12-31,Chhattisgarh,63.118923,forecast
+2026-01-31,Gujarat,85.86352,forecast
+2026-02-28,Gujarat,61.598614,forecast
+2026-03-31,Gujarat,68.92825,forecast
+2026-04-30,Gujarat,61.825222,forecast
+2026-05-31,Gujarat,63.476006,forecast
+2026-06-30,Gujarat,63.412636,forecast
+2026-07-31,Gujarat,70.10843,forecast
+2026-08-31,Gujarat,67.533195,forecast
+2026-09-30,Gujarat,69.2742,forecast
+2026-10-31,Gujarat,69.62088,forecast
+2026-11-30,Gujarat,69.36141,forecast
+2026-12-31,Gujarat,69.040054,forecast
+2027-01-31,Gujarat,60.650032,forecast
+2027-02-28,Gujarat,61.680164,forecast
+2027-03-31,Gujarat,66.60465,forecast
+2027-04-30,Gujarat,61.778515,forecast
+2027-05-31,Gujarat,59.92618,forecast
+2027-06-30,Gujarat,60.07852,forecast
+2027-07-31,Gujarat,67.04537,forecast
+2027-08-31,Gujarat,69.50983,forecast
+2027-09-30,Gujarat,69.50983,forecast
+2027-10-31,Gujarat,69.62088,forecast
+2027-11-30,Gujarat,68.93285,forecast
+2027-12-31,Gujarat,69.040054,forecast
+2028-01-31,Gujarat,60.650032,forecast
+2028-02-29,Gujarat,61.680164,forecast
+2028-03-31,Gujarat,66.60465,forecast
+2028-04-30,Gujarat,61.778515,forecast
+2028-05-31,Gujarat,59.92618,forecast
+2028-06-30,Gujarat,60.07852,forecast
+2028-07-31,Gujarat,67.04537,forecast
+2028-08-31,Gujarat,69.50983,forecast
+2028-09-30,Gujarat,69.50983,forecast
+2028-10-31,Gujarat,69.62088,forecast
+2028-11-30,Gujarat,68.93285,forecast
+2028-12-31,Gujarat,69.040054,forecast
+2029-01-31,Gujarat,60.650032,forecast
+2029-02-28,Gujarat,61.680164,forecast
+2029-03-31,Gujarat,66.60465,forecast
+2029-04-30,Gujarat,61.778515,forecast
+2029-05-31,Gujarat,59.92618,forecast
+2029-06-30,Gujarat,60.07852,forecast
+2029-07-31,Gujarat,67.04537,forecast
+2029-08-31,Gujarat,69.50983,forecast
+2029-09-30,Gujarat,69.50983,forecast
+2029-10-31,Gujarat,69.62088,forecast
+2029-11-30,Gujarat,68.93285,forecast
+2029-12-31,Gujarat,69.040054,forecast
+2030-01-31,Gujarat,60.650032,forecast
+2030-02-28,Gujarat,61.680164,forecast
+2030-03-31,Gujarat,66.60465,forecast
+2030-04-30,Gujarat,61.778515,forecast
+2030-05-31,Gujarat,59.92618,forecast
+2030-06-30,Gujarat,60.07852,forecast
+2030-07-31,Gujarat,67.04537,forecast
+2030-08-31,Gujarat,69.50983,forecast
+2030-09-30,Gujarat,69.50983,forecast
+2030-10-31,Gujarat,69.62088,forecast
+2030-11-30,Gujarat,68.93285,forecast
+2030-12-31,Gujarat,69.040054,forecast
+2026-01-31,Odisha,137.5247,forecast
+2026-02-28,Odisha,122.9431,forecast
+2026-03-31,Odisha,122.95676,forecast
+2026-04-30,Odisha,130.12318,forecast
+2026-05-31,Odisha,130.7683,forecast
+2026-06-30,Odisha,135.50537,forecast
+2026-07-31,Odisha,140.1291,forecast
+2026-08-31,Odisha,144.12373,forecast
+2026-09-30,Odisha,142.12602,forecast
+2026-10-31,Odisha,142.73709,forecast
+2026-11-30,Odisha,142.15552,forecast
+2026-12-31,Odisha,140.55028,forecast
+2027-01-31,Odisha,136.56786,forecast
+2027-02-28,Odisha,140.82077,forecast
+2027-03-31,Odisha,149.00883,forecast
+2027-04-30,Odisha,143.01598,forecast
+2027-05-31,Odisha,139.04395,forecast
+2027-06-30,Odisha,136.86345,forecast
+2027-07-31,Odisha,139.7898,forecast
+2027-08-31,Odisha,145.7629,forecast
+2027-09-30,Odisha,135.14975,forecast
+2027-10-31,Odisha,146.06584,forecast
+2027-11-30,Odisha,143.41273,forecast
+2027-12-31,Odisha,140.75552,forecast
+2028-01-31,Odisha,135.64075,forecast
+2028-02-29,Odisha,132.54225,forecast
+2028-03-31,Odisha,148.08173,forecast
+2028-04-30,Odisha,134.10672,forecast
+2028-05-31,Odisha,139.86566,forecast
+2028-06-30,Odisha,136.86345,forecast
+2028-07-31,Odisha,139.54848,forecast
+2028-08-31,Odisha,144.01324,forecast
+2028-09-30,Odisha,135.14975,forecast
+2028-10-31,Odisha,145.13873,forecast
+2028-11-30,Odisha,142.97806,forecast
+2028-12-31,Odisha,140.75552,forecast
+2029-01-31,Odisha,135.64075,forecast
+2029-02-28,Odisha,140.82077,forecast
+2029-03-31,Odisha,148.08173,forecast
+2029-04-30,Odisha,134.10672,forecast
+2029-05-31,Odisha,139.80655,forecast
+2029-06-30,Odisha,136.86345,forecast
+2029-07-31,Odisha,139.54848,forecast
+2029-08-31,Odisha,145.7629,forecast
+2029-09-30,Odisha,135.14975,forecast
+2029-10-31,Odisha,145.13873,forecast
+2029-11-30,Odisha,143.41273,forecast
+2029-12-31,Odisha,140.75552,forecast
+2030-01-31,Odisha,135.64075,forecast
+2030-02-28,Odisha,132.54225,forecast
+2030-03-31,Odisha,148.08173,forecast
+2030-04-30,Odisha,134.10672,forecast
+2030-05-31,Odisha,139.86566,forecast
+2030-06-30,Odisha,136.86345,forecast
+2030-07-31,Odisha,139.54848,forecast
+2030-08-31,Odisha,144.01324,forecast
+2030-09-30,Odisha,135.14975,forecast
+2030-10-31,Odisha,145.13873,forecast
+2030-11-30,Odisha,142.97806,forecast
+2030-12-31,Odisha,140.75552,forecast
+2025-12-30,Tripura,8.269365,forecast
+2026-01-30,Tripura,11.476587,forecast
+2026-02-28,Tripura,12.136914,forecast
+2026-03-30,Tripura,15.590717,forecast
+2026-04-30,Tripura,14.149383,forecast
+2026-05-30,Tripura,14.617834,forecast
+2026-06-30,Tripura,13.674599,forecast
+2026-07-30,Tripura,14.442258,forecast
+2026-08-30,Tripura,14.566188,forecast
+2026-09-30,Tripura,14.825727,forecast
+2026-10-30,Tripura,14.739171,forecast
+2026-11-30,Tripura,14.965142,forecast
+2026-12-30,Tripura,14.832675,forecast
+2027-01-30,Tripura,12.309848,forecast
+2027-02-28,Tripura,12.878693,forecast
+2027-03-30,Tripura,16.482327,forecast
+2027-04-30,Tripura,14.181688,forecast
+2027-05-30,Tripura,14.020295,forecast
+2027-06-30,Tripura,13.0314245,forecast
+2027-07-30,Tripura,14.742944,forecast
+2027-08-30,Tripura,14.866874,forecast
+2027-09-30,Tripura,14.825727,forecast
+2027-10-30,Tripura,14.739171,forecast
+2027-11-30,Tripura,14.965142,forecast
+2027-12-30,Tripura,14.832675,forecast
+2028-01-30,Tripura,12.309848,forecast
+2028-02-29,Tripura,12.878693,forecast
+2028-03-30,Tripura,16.482327,forecast
+2028-04-30,Tripura,14.181688,forecast
+2028-05-30,Tripura,14.020295,forecast
+2028-06-30,Tripura,13.0314245,forecast
+2028-07-30,Tripura,14.742944,forecast
+2028-08-30,Tripura,14.866874,forecast
+2028-09-30,Tripura,14.825727,forecast
+2028-10-30,Tripura,14.739171,forecast
+2028-11-30,Tripura,14.965142,forecast
+2028-12-30,Tripura,14.832675,forecast
+2029-01-30,Tripura,12.309848,forecast
+2029-02-28,Tripura,12.878693,forecast
+2029-03-30,Tripura,16.482327,forecast
+2029-04-30,Tripura,14.181688,forecast
+2029-05-30,Tripura,14.020295,forecast
+2029-06-30,Tripura,13.0314245,forecast
+2029-07-30,Tripura,14.742944,forecast
+2029-08-30,Tripura,14.866874,forecast
+2029-09-30,Tripura,14.825727,forecast
+2029-10-30,Tripura,14.739171,forecast
+2029-11-30,Tripura,14.965142,forecast
+2029-12-30,Tripura,14.832675,forecast
+2030-01-30,Tripura,12.309848,forecast
+2030-02-28,Tripura,12.878693,forecast
+2030-03-30,Tripura,16.482327,forecast
+2030-04-30,Tripura,14.181688,forecast
+2030-05-30,Tripura,14.020295,forecast
+2030-06-30,Tripura,13.0314245,forecast
+2030-07-30,Tripura,14.742944,forecast
+2030-08-30,Tripura,14.866874,forecast
+2030-09-30,Tripura,14.825727,forecast
+2030-10-30,Tripura,14.739171,forecast
+2030-11-30,Tripura,14.965142,forecast
+2026-01-31,Uttarakhand,24.92108,forecast
+2026-02-28,Uttarakhand,22.8985,forecast
+2026-03-31,Uttarakhand,30.139912,forecast
+2026-04-30,Uttarakhand,24.767244,forecast
+2026-05-31,Uttarakhand,26.499512,forecast
+2026-06-30,Uttarakhand,27.154207,forecast
+2026-07-31,Uttarakhand,29.359701,forecast
+2026-08-31,Uttarakhand,28.778605,forecast
+2026-09-30,Uttarakhand,28.405672,forecast
+2026-10-31,Uttarakhand,28.891819,forecast
+2026-11-30,Uttarakhand,29.926102,forecast
+2026-12-31,Uttarakhand,30.117752,forecast
+2027-01-31,Uttarakhand,23.318108,forecast
+2027-02-28,Uttarakhand,23.557781,forecast
+2027-03-31,Uttarakhand,29.501287,forecast
+2027-04-30,Uttarakhand,26.365852,forecast
+2027-05-31,Uttarakhand,27.024921,forecast
+2027-06-30,Uttarakhand,27.47734,forecast
+2027-07-31,Uttarakhand,29.359701,forecast
+2027-08-31,Uttarakhand,28.446962,forecast
+2027-09-30,Uttarakhand,28.405672,forecast
+2027-10-31,Uttarakhand,29.258545,forecast
+2027-11-30,Uttarakhand,30.178707,forecast
+2027-12-31,Uttarakhand,28.940817,forecast
+2028-01-31,Uttarakhand,24.495049,forecast
+2028-02-29,Uttarakhand,24.646488,forecast
+2028-03-31,Uttarakhand,30.589994,forecast
+2028-04-30,Uttarakhand,25.108332,forecast
+2028-05-31,Uttarakhand,26.944338,forecast
+2028-06-30,Uttarakhand,27.599033,forecast
+2028-07-31,Uttarakhand,29.359701,forecast
+2028-08-31,Uttarakhand,28.778605,forecast
+2028-09-30,Uttarakhand,28.405672,forecast
+2028-10-31,Uttarakhand,28.891819,forecast
+2028-11-30,Uttarakhand,29.926102,forecast
+2028-12-31,Uttarakhand,30.117752,forecast
+2029-01-31,Uttarakhand,23.318108,forecast
+2029-02-28,Uttarakhand,23.557781,forecast
+2029-03-31,Uttarakhand,29.501287,forecast
+2029-04-30,Uttarakhand,26.365852,forecast
+2029-05-31,Uttarakhand,27.024921,forecast
+2029-06-30,Uttarakhand,27.47734,forecast
+2029-07-31,Uttarakhand,29.359701,forecast
+2029-08-31,Uttarakhand,28.446962,forecast
+2029-09-30,Uttarakhand,28.405672,forecast
+2029-10-31,Uttarakhand,29.258545,forecast
+2029-11-30,Uttarakhand,30.178707,forecast
+2029-12-31,Uttarakhand,28.940817,forecast
+2030-01-31,Uttarakhand,24.495049,forecast
+2030-02-28,Uttarakhand,24.646488,forecast
+2030-03-31,Uttarakhand,30.589994,forecast
+2030-04-30,Uttarakhand,25.108332,forecast
+2030-05-31,Uttarakhand,26.944338,forecast
+2030-06-30,Uttarakhand,27.599033,forecast
+2030-07-31,Uttarakhand,29.359701,forecast
+2030-08-31,Uttarakhand,28.778605,forecast
+2030-09-30,Uttarakhand,28.405672,forecast
+2030-10-31,Uttarakhand,28.891819,forecast
+2030-11-30,Uttarakhand,29.926102,forecast
+2030-12-31,Uttarakhand,30.117752,forecast
+2026-01-31,Haryana,12.505028,forecast
+2026-02-28,Haryana,13.427014,forecast
+2026-03-31,Haryana,18.779556,forecast
+2026-04-30,Haryana,15.1522,forecast
+2026-05-31,Haryana,16.332773,forecast
+2026-06-30,Haryana,17.346134,forecast
+2026-07-31,Haryana,17.373589,forecast
+2026-08-31,Haryana,15.93338,forecast
+2026-09-30,Haryana,17.662243,forecast
+2026-10-31,Haryana,16.056005,forecast
+2026-11-30,Haryana,18.240685,forecast
+2026-12-31,Haryana,16.856203,forecast
+2027-01-31,Haryana,11.564156,forecast
+2027-02-28,Haryana,13.415378,forecast
+2027-03-31,Haryana,18.604372,forecast
+2027-04-30,Haryana,13.959492,forecast
+2027-05-31,Haryana,15.434157,forecast
+2027-06-30,Haryana,16.447517,forecast
+2027-07-31,Haryana,18.251366,forecast
+2027-08-31,Haryana,16.234066,forecast
+2027-09-30,Haryana,17.662243,forecast
+2027-10-31,Haryana,16.17453,forecast
+2027-11-30,Haryana,18.240685,forecast
+2027-12-31,Haryana,16.856203,forecast
+2028-01-31,Haryana,11.564156,forecast
+2028-02-29,Haryana,13.415378,forecast
+2028-03-31,Haryana,18.604372,forecast
+2028-04-30,Haryana,13.959492,forecast
+2028-05-31,Haryana,15.434157,forecast
+2028-06-30,Haryana,16.447517,forecast
+2028-07-31,Haryana,18.251366,forecast
+2028-08-31,Haryana,16.234066,forecast
+2028-09-30,Haryana,17.662243,forecast
+2028-10-31,Haryana,16.17453,forecast
+2028-11-30,Haryana,18.240685,forecast
+2028-12-31,Haryana,16.856203,forecast
+2029-01-31,Haryana,11.564156,forecast
+2029-02-28,Haryana,13.415378,forecast
+2029-03-31,Haryana,18.604372,forecast
+2029-04-30,Haryana,13.959492,forecast
+2029-05-31,Haryana,15.434157,forecast
+2029-06-30,Haryana,16.447517,forecast
+2029-07-31,Haryana,18.251366,forecast
+2029-08-31,Haryana,16.234066,forecast
+2029-09-30,Haryana,17.662243,forecast
+2029-10-31,Haryana,16.17453,forecast
+2029-11-30,Haryana,18.240685,forecast
+2029-12-31,Haryana,16.856203,forecast
+2030-01-31,Haryana,11.564156,forecast
+2030-02-28,Haryana,13.415378,forecast
+2030-03-31,Haryana,18.604372,forecast
+2030-04-30,Haryana,13.959492,forecast
+2030-05-31,Haryana,15.434157,forecast
+2030-06-30,Haryana,16.447517,forecast
+2030-07-31,Haryana,18.251366,forecast
+2030-08-31,Haryana,16.234066,forecast
+2030-09-30,Haryana,17.662243,forecast
+2030-10-31,Haryana,16.17453,forecast
+2030-11-30,Haryana,18.240685,forecast
+2030-12-31,Haryana,16.856203,forecast
+2026-01-31,Punjab,73.75901,forecast
+2026-02-28,Punjab,50.706223,forecast
+2026-03-31,Punjab,61.72852,forecast
+2026-04-30,Punjab,51.486687,forecast
+2026-05-31,Punjab,49.82638,forecast
+2026-06-30,Punjab,66.08897,forecast
+2026-07-31,Punjab,67.73756,forecast
+2026-08-31,Punjab,66.71689,forecast
+2026-09-30,Punjab,67.77182,forecast
+2026-10-31,Punjab,67.15937,forecast
+2026-11-30,Punjab,68.10625,forecast
+2026-12-31,Punjab,67.83194,forecast
+2027-01-31,Punjab,60.076794,forecast
+2027-02-28,Punjab,61.733147,forecast
+2027-03-31,Punjab,67.636505,forecast
+2027-04-30,Punjab,60.762894,forecast
+2027-05-31,Punjab,59.739258,forecast
+2027-06-30,Punjab,59.953835,forecast
+2027-07-31,Punjab,64.38534,forecast
+2027-08-31,Punjab,67.78555,forecast
+2027-09-30,Punjab,68.60024,forecast
+2027-10-31,Punjab,67.59666,forecast
+2027-11-30,Punjab,67.06829,forecast
+2027-12-31,Punjab,66.38618,forecast
+2028-01-31,Punjab,59.262108,forecast
+2028-02-29,Punjab,60.277206,forecast
+2028-03-31,Punjab,67.636505,forecast
+2028-04-30,Punjab,60.762894,forecast
+2028-05-31,Punjab,59.739258,forecast
+2028-06-30,Punjab,59.953835,forecast
+2028-07-31,Punjab,63.95678,forecast
+2028-08-31,Punjab,67.78555,forecast
+2028-09-30,Punjab,68.60024,forecast
+2028-10-31,Punjab,67.59666,forecast
+2028-11-30,Punjab,67.06829,forecast
+2028-12-31,Punjab,66.38618,forecast
+2029-01-31,Punjab,59.262108,forecast
+2029-02-28,Punjab,60.277206,forecast
+2029-03-31,Punjab,67.636505,forecast
+2029-04-30,Punjab,60.762894,forecast
+2029-05-31,Punjab,59.739258,forecast
+2029-06-30,Punjab,59.953835,forecast
+2029-07-31,Punjab,63.95678,forecast
+2029-08-31,Punjab,67.78555,forecast
+2029-09-30,Punjab,68.60024,forecast
+2029-10-31,Punjab,67.59666,forecast
+2029-11-30,Punjab,67.06829,forecast
+2029-12-31,Punjab,66.38618,forecast
+2030-01-31,Punjab,59.262108,forecast
+2030-02-28,Punjab,60.277206,forecast
+2030-03-31,Punjab,67.636505,forecast
+2030-04-30,Punjab,60.762894,forecast
+2030-05-31,Punjab,59.739258,forecast
+2030-06-30,Punjab,59.953835,forecast
+2030-07-31,Punjab,63.95678,forecast
+2030-08-31,Punjab,67.78555,forecast
+2030-09-30,Punjab,68.60024,forecast
+2030-10-31,Punjab,67.59666,forecast
+2030-11-30,Punjab,67.06829,forecast
+2030-12-31,Punjab,66.38618,forecast
+2026-01-31,Goa,16.828684,forecast
+2026-02-28,Goa,18.389448,forecast
+2026-03-31,Goa,22.802992,forecast
+2026-04-30,Goa,19.692263,forecast
+2026-05-31,Goa,20.113117,forecast
+2026-06-30,Goa,21.225698,forecast
+2026-07-31,Goa,23.44208,forecast
+2026-08-31,Goa,23.35011,forecast
+2026-09-30,Goa,21.913218,forecast
+2026-10-31,Goa,22.385723,forecast
+2026-11-30,Goa,23.050724,forecast
+2026-12-31,Goa,23.17395,forecast
+2027-01-31,Goa,14.758761,forecast
+2027-02-28,Goa,16.99726,forecast
+2027-03-31,Goa,23.971167,forecast
+2027-04-30,Goa,18.732147,forecast
+2027-05-31,Goa,18.576336,forecast
+2027-06-30,Goa,19.715937,forecast
+2027-07-31,Goa,22.623304,forecast
+2027-08-31,Goa,22.793804,forecast
+2027-09-30,Goa,21.483149,forecast
+2027-10-31,Goa,22.81272,forecast
+2027-11-30,Goa,23.47772,forecast
+2027-12-31,Goa,22.54402,forecast
+2028-01-31,Goa,15.059448,forecast
+2028-02-29,Goa,17.929537,forecast
+2028-03-31,Goa,22.444841,forecast
+2028-04-30,Goa,18.732147,forecast
+2028-05-31,Goa,18.576336,forecast
+2028-06-30,Goa,19.715937,forecast
+2028-07-31,Goa,22.807108,forecast
+2028-08-31,Goa,22.793804,forecast
+2028-09-30,Goa,21.483149,forecast
+2028-10-31,Goa,22.81272,forecast
+2028-11-30,Goa,23.47772,forecast
+2028-12-31,Goa,22.54402,forecast
+2029-01-31,Goa,15.059448,forecast
+2029-02-28,Goa,17.929537,forecast
+2029-03-31,Goa,22.444841,forecast
+2029-04-30,Goa,18.732147,forecast
+2029-05-31,Goa,18.576336,forecast
+2029-06-30,Goa,19.715937,forecast
+2029-07-31,Goa,22.807108,forecast
+2029-08-31,Goa,22.793804,forecast
+2029-09-30,Goa,21.483149,forecast
+2029-10-31,Goa,22.81272,forecast
+2029-11-30,Goa,23.47772,forecast
+2029-12-31,Goa,22.54402,forecast
+2030-01-31,Goa,15.059448,forecast
+2030-02-28,Goa,17.929537,forecast
+2030-03-31,Goa,22.444841,forecast
+2030-04-30,Goa,18.732147,forecast
+2030-05-31,Goa,18.576336,forecast
+2030-06-30,Goa,19.715937,forecast
+2030-07-31,Goa,22.807108,forecast
+2030-08-31,Goa,22.793804,forecast
+2030-09-30,Goa,21.483149,forecast
+2030-10-31,Goa,22.81272,forecast
+2030-11-30,Goa,23.47772,forecast
+2030-12-31,Goa,22.54402,forecast
+2026-01-31,Himachal Pradesh,2.0011718,forecast
+2026-02-28,Himachal Pradesh,2.6855044,forecast
+2026-03-31,Himachal Pradesh,4.1499896,forecast
+2026-04-30,Himachal Pradesh,3.4682245,forecast
+2026-05-31,Himachal Pradesh,4.2659926,forecast
+2026-06-30,Himachal Pradesh,3.5802934,forecast
+2026-07-31,Himachal Pradesh,3.2196715,forecast
+2026-08-31,Himachal Pradesh,3.1093063,forecast
+2026-09-30,Himachal Pradesh,2.9099352,forecast
+2026-10-31,Himachal Pradesh,3.0352097,forecast
+2026-11-30,Himachal Pradesh,3.0352097,forecast
+2026-12-31,Himachal Pradesh,3.0402923,forecast
+2027-01-31,Himachal Pradesh,1.3617861,forecast
+2027-02-28,Himachal Pradesh,2.2111466,forecast
+2027-03-31,Himachal Pradesh,3.3025112,forecast
+2027-04-30,Himachal Pradesh,3.0705163,forecast
+2027-05-31,Himachal Pradesh,3.139754,forecast
+2027-06-30,Himachal Pradesh,3.1317923,forecast
+2027-07-31,Himachal Pradesh,3.6926343,forecast
+2027-08-31,Himachal Pradesh,3.5822692,forecast
+2027-09-30,Himachal Pradesh,3.541123,forecast
+2027-10-31,Himachal Pradesh,3.454567,forecast
+2027-11-30,Himachal Pradesh,3.454567,forecast
+2027-12-31,Himachal Pradesh,3.4596496,forecast
+2028-01-31,Himachal Pradesh,1.7560077,forecast
+2028-02-29,Himachal Pradesh,2.6053681,forecast
+2028-03-31,Himachal Pradesh,3.9048254,forecast
+2028-04-30,Himachal Pradesh,3.0705163,forecast
+2028-05-31,Himachal Pradesh,3.139754,forecast
+2028-06-30,Himachal Pradesh,3.1317923,forecast
+2028-07-31,Himachal Pradesh,3.6926343,forecast
+2028-08-31,Himachal Pradesh,3.5822692,forecast
+2028-09-30,Himachal Pradesh,3.541123,forecast
+2028-10-31,Himachal Pradesh,3.454567,forecast
+2028-11-30,Himachal Pradesh,3.454567,forecast
+2028-12-31,Himachal Pradesh,3.4596496,forecast
+2029-01-31,Himachal Pradesh,1.7560077,forecast
+2029-02-28,Himachal Pradesh,2.6053681,forecast
+2029-03-31,Himachal Pradesh,3.9048254,forecast
+2029-04-30,Himachal Pradesh,3.0705163,forecast
+2029-05-31,Himachal Pradesh,3.139754,forecast
+2029-06-30,Himachal Pradesh,3.1317923,forecast
+2029-07-31,Himachal Pradesh,3.6926343,forecast
+2029-08-31,Himachal Pradesh,3.5822692,forecast
+2029-09-30,Himachal Pradesh,3.541123,forecast
+2029-10-31,Himachal Pradesh,3.454567,forecast
+2029-11-30,Himachal Pradesh,3.454567,forecast
+2029-12-31,Himachal Pradesh,3.4596496,forecast
+2030-01-31,Himachal Pradesh,1.7560077,forecast
+2030-02-28,Himachal Pradesh,2.6053681,forecast
+2030-03-31,Himachal Pradesh,3.9048254,forecast
+2030-04-30,Himachal Pradesh,3.0705163,forecast
+2030-05-31,Himachal Pradesh,3.139754,forecast
+2030-06-30,Himachal Pradesh,3.1317923,forecast
+2030-07-31,Himachal Pradesh,3.6926343,forecast
+2030-08-31,Himachal Pradesh,3.5822692,forecast
+2030-09-30,Himachal Pradesh,3.541123,forecast
+2030-10-31,Himachal Pradesh,3.454567,forecast
+2030-11-30,Himachal Pradesh,3.454567,forecast
+2030-12-31,Himachal Pradesh,3.4596496,forecast
+2026-01-31,Chandigarh,5.994412,forecast
+2026-02-28,Chandigarh,6.9885035,forecast
+2026-03-31,Chandigarh,8.298491,forecast
+2026-04-30,Chandigarh,5.131384,forecast
+2026-05-31,Chandigarh,5.4999104,forecast
+2026-06-30,Chandigarh,5.491949,forecast
+2026-07-31,Chandigarh,7.370483,forecast
+2026-08-31,Chandigarh,5.7815537,forecast
+2026-09-30,Chandigarh,6.2000256,forecast
+2026-10-31,Chandigarh,5.4956255,forecast
+2026-11-30,Chandigarh,5.9096084,forecast
+2026-12-31,Chandigarh,6.4496727,forecast
+2027-01-31,Chandigarh,3.1487734,forecast
+2027-02-28,Chandigarh,5.546677,forecast
+2027-03-31,Chandigarh,6.36981,forecast
+2027-04-30,Chandigarh,4.08158,forecast
+2027-05-31,Chandigarh,4.375686,forecast
+2027-06-30,Chandigarh,4.367725,forecast
+2027-07-31,Chandigarh,6.0131245,forecast
+2027-08-31,Chandigarh,5.6265855,forecast
+2027-09-30,Chandigarh,5.999422,forecast
+2027-10-31,Chandigarh,5.9128656,forecast
+2027-11-30,Chandigarh,5.9128656,forecast
+2027-12-31,Chandigarh,6.2411,forecast
+2028-01-31,Chandigarh,2.915065,forecast
+2028-02-29,Chandigarh,5.3129683,forecast
+2028-03-31,Chandigarh,6.1361012,forecast
+2028-04-30,Chandigarh,4.202622,forecast
+2028-05-31,Chandigarh,4.375686,forecast
+2028-06-30,Chandigarh,4.367725,forecast
+2028-07-31,Chandigarh,6.0131245,forecast
+2028-08-31,Chandigarh,5.6265855,forecast
+2028-09-30,Chandigarh,5.999422,forecast
+2028-10-31,Chandigarh,5.9128656,forecast
+2028-11-30,Chandigarh,5.9128656,forecast
+2028-12-31,Chandigarh,6.2411,forecast
+2029-01-31,Chandigarh,2.915065,forecast
+2029-02-28,Chandigarh,5.3129683,forecast
+2029-03-31,Chandigarh,6.1361012,forecast
+2029-04-30,Chandigarh,4.202622,forecast
+2029-05-31,Chandigarh,4.375686,forecast
+2029-06-30,Chandigarh,4.367725,forecast
+2029-07-31,Chandigarh,6.0131245,forecast
+2029-08-31,Chandigarh,5.6265855,forecast
+2029-09-30,Chandigarh,5.999422,forecast
+2029-10-31,Chandigarh,5.9128656,forecast
+2029-11-30,Chandigarh,5.9128656,forecast
+2029-12-31,Chandigarh,6.2411,forecast
+2030-01-31,Chandigarh,2.915065,forecast
+2030-02-28,Chandigarh,5.3129683,forecast
+2030-03-31,Chandigarh,6.1361012,forecast
+2030-04-30,Chandigarh,4.202622,forecast
+2030-05-31,Chandigarh,4.375686,forecast
+2030-06-30,Chandigarh,4.367725,forecast
+2030-07-31,Chandigarh,6.0131245,forecast
+2030-08-31,Chandigarh,5.6265855,forecast
+2030-09-30,Chandigarh,5.999422,forecast
+2030-10-31,Chandigarh,5.9128656,forecast
+2030-11-30,Chandigarh,5.9128656,forecast
+2030-12-31,Chandigarh,6.2411,forecast
+2026-01-31,Puducherry,4.121847,forecast
+2026-02-28,Puducherry,4.2617235,forecast
+2026-03-31,Puducherry,5.9722586,forecast
+2026-04-30,Puducherry,3.6203547,forecast
+2026-05-31,Puducherry,3.2650504,forecast
+2026-06-30,Puducherry,3.1747532,forecast
+2026-07-31,Puducherry,3.893499,forecast
+2026-08-31,Puducherry,3.9392304,forecast
+2026-09-30,Puducherry,3.0759997,forecast
+2026-10-31,Puducherry,2.5092661,forecast
+2026-11-30,Puducherry,2.5092661,forecast
+2026-12-31,Puducherry,2.9188375,forecast
+2027-01-31,Puducherry,3.2297242,forecast
+2027-02-28,Puducherry,3.369601,forecast
+2027-03-31,Puducherry,4.759334,forecast
+2027-04-30,Puducherry,2.849007,forecast
+2027-05-31,Puducherry,2.8145058,forecast
+2027-06-30,Puducherry,2.737573,forecast
+2027-07-31,Puducherry,3.7457569,forecast
+2027-08-31,Puducherry,3.6353917,forecast
+2027-09-30,Puducherry,3.5942457,forecast
+2027-10-31,Puducherry,3.5076897,forecast
+2027-11-30,Puducherry,3.5076897,forecast
+2027-12-31,Puducherry,3.5127718,forecast
+2028-01-31,Puducherry,2.589144,forecast
+2028-02-29,Puducherry,2.7290208,forecast
+2028-03-31,Puducherry,4.118754,forecast
+2028-04-30,Puducherry,3.2059748,forecast
+2028-05-31,Puducherry,3.2752125,forecast
+2028-06-30,Puducherry,3.0382583,forecast
+2028-07-31,Puducherry,3.7457569,forecast
+2028-08-31,Puducherry,3.6353917,forecast
+2028-09-30,Puducherry,3.5942457,forecast
+2028-10-31,Puducherry,3.5076897,forecast
+2028-11-30,Puducherry,3.5076897,forecast
+2028-12-31,Puducherry,3.5127718,forecast
+2029-01-31,Puducherry,2.589144,forecast
+2029-02-28,Puducherry,2.7290208,forecast
+2029-03-31,Puducherry,4.118754,forecast
+2029-04-30,Puducherry,3.2059748,forecast
+2029-05-31,Puducherry,3.2752125,forecast
+2029-06-30,Puducherry,3.0382583,forecast
+2029-07-31,Puducherry,3.7457569,forecast
+2029-08-31,Puducherry,3.6353917,forecast
+2029-09-30,Puducherry,3.5942457,forecast
+2029-10-31,Puducherry,3.5076897,forecast
+2029-11-30,Puducherry,3.5076897,forecast
+2029-12-31,Puducherry,3.5127718,forecast
+2030-01-31,Puducherry,2.589144,forecast
+2030-02-28,Puducherry,2.7290208,forecast
+2030-03-31,Puducherry,4.118754,forecast
+2030-04-30,Puducherry,3.2059748,forecast
+2030-05-31,Puducherry,3.2752125,forecast
+2030-06-30,Puducherry,3.0382583,forecast
+2030-07-31,Puducherry,3.7457569,forecast
+2030-08-31,Puducherry,3.6353917,forecast
+2030-09-30,Puducherry,3.5942457,forecast
+2030-10-31,Puducherry,3.5076897,forecast
+2030-11-30,Puducherry,3.5076897,forecast
+2030-12-31,Puducherry,3.5127718,forecast
+2026-01-31,Jammu and Kashmir,2.5773678,forecast
+2026-02-28,Jammu and Kashmir,4.9752674,forecast
+2026-03-31,Jammu and Kashmir,6.3281884,forecast
+2026-04-30,Jammu and Kashmir,3.8073337,forecast
+2026-05-31,Jammu and Kashmir,4.068571,forecast
+2026-06-30,Jammu and Kashmir,4.06061,forecast
+2026-07-31,Jammu and Kashmir,4.8473525,forecast
+2026-08-31,Jammu and Kashmir,4.8747964,forecast
+2026-09-30,Jammu and Kashmir,4.83365,forecast
+2026-10-31,Jammu and Kashmir,4.8996377,forecast
+2026-11-30,Jammu and Kashmir,4.8996377,forecast
+2026-12-31,Jammu and Kashmir,5.3255296,forecast
+2027-01-31,Jammu and Kashmir,3.2182162,forecast
+2027-02-28,Jammu and Kashmir,3.9025495,forecast
+2027-03-31,Jammu and Kashmir,4.7256823,forecast
+2027-04-30,Jammu and Kashmir,3.0789442,forecast
+2027-05-31,Jammu and Kashmir,3.0927725,forecast
+2027-06-30,Jammu and Kashmir,3.0848107,forecast
+2027-07-31,Jammu and Kashmir,4.2812095,forecast
+2027-08-31,Jammu and Kashmir,4.3086534,forecast
+2027-09-30,Jammu and Kashmir,4.0845494,forecast
+2027-10-31,Jammu and Kashmir,3.972378,forecast
+2027-11-30,Jammu and Kashmir,3.972378,forecast
+2027-12-31,Jammu and Kashmir,4.1704955,forecast
+2028-01-31,Jammu and Kashmir,3.184769,forecast
+2028-02-29,Jammu and Kashmir,3.8691025,forecast
+2028-03-31,Jammu and Kashmir,4.545578,forecast
+2028-04-30,Jammu and Kashmir,3.203723,forecast
+2028-05-31,Jammu and Kashmir,3.1094596,forecast
+2028-06-30,Jammu and Kashmir,2.954841,forecast
+2028-07-31,Jammu and Kashmir,4.2192936,forecast
+2028-08-31,Jammu and Kashmir,4.2467375,forecast
+2028-09-30,Jammu and Kashmir,4.205591,forecast
+2028-10-31,Jammu and Kashmir,3.972378,forecast
+2028-11-30,Jammu and Kashmir,3.972378,forecast
+2028-12-31,Jammu and Kashmir,4.1704955,forecast
+2029-01-31,Jammu and Kashmir,3.184769,forecast
+2029-02-28,Jammu and Kashmir,3.8691025,forecast
+2029-03-31,Jammu and Kashmir,4.545578,forecast
+2029-04-30,Jammu and Kashmir,3.203723,forecast
+2029-05-31,Jammu and Kashmir,3.1094596,forecast
+2029-06-30,Jammu and Kashmir,2.954841,forecast
+2029-07-31,Jammu and Kashmir,4.2192936,forecast
+2029-08-31,Jammu and Kashmir,4.2467375,forecast
+2029-09-30,Jammu and Kashmir,4.205591,forecast
+2029-10-31,Jammu and Kashmir,3.972378,forecast
+2029-11-30,Jammu and Kashmir,3.972378,forecast
+2029-12-31,Jammu and Kashmir,4.1704955,forecast
+2030-01-31,Jammu and Kashmir,3.184769,forecast
+2030-02-28,Jammu and Kashmir,3.8691025,forecast
+2030-03-31,Jammu and Kashmir,4.545578,forecast
+2030-04-30,Jammu and Kashmir,3.203723,forecast
+2030-05-31,Jammu and Kashmir,3.1094596,forecast
+2030-06-30,Jammu and Kashmir,2.954841,forecast
+2030-07-31,Jammu and Kashmir,4.2192936,forecast
+2030-08-31,Jammu and Kashmir,4.2467375,forecast
+2030-09-30,Jammu and Kashmir,4.205591,forecast
+2030-10-31,Jammu and Kashmir,3.972378,forecast
+2030-11-30,Jammu and Kashmir,3.972378,forecast
+2030-12-31,Jammu and Kashmir,4.1704955,forecast
+2025-12-30,Manipur,15.07833,forecast
+2026-01-30,Manipur,10.832554,forecast
+2026-02-28,Manipur,11.408279,forecast
+2026-03-30,Manipur,14.073342,forecast
+2026-04-30,Manipur,12.394025,forecast
+2026-05-30,Manipur,12.211575,forecast
+2026-06-30,Manipur,12.667051,forecast
+2026-07-30,Manipur,13.977647,forecast
+2026-08-30,Manipur,15.451672,forecast
+2026-09-30,Manipur,15.310625,forecast
+2026-10-30,Manipur,15.323969,forecast
+2026-11-30,Manipur,15.549938,forecast
+2026-12-30,Manipur,16.385767,forecast
+2027-01-30,Manipur,12.464221,forecast
+2027-02-28,Manipur,12.851307,forecast
+2027-03-30,Manipur,15.543085,forecast
+2027-04-30,Manipur,13.885888,forecast
+2027-05-30,Manipur,12.501052,forecast
+2027-06-30,Manipur,12.501052,forecast
+2027-07-30,Manipur,14.160646,forecast
+2027-08-30,Manipur,13.938217,forecast
+2027-09-30,Manipur,13.897071,forecast
+2027-10-30,Manipur,13.810514,forecast
+2027-11-30,Manipur,13.770988,forecast
+2027-12-30,Manipur,14.339159,forecast
+2028-01-30,Manipur,11.455999,forecast
+2028-02-29,Manipur,11.843085,forecast
+2028-03-30,Manipur,13.816409,forecast
+2028-04-30,Manipur,11.89181,forecast
+2028-05-30,Manipur,11.694953,forecast
+2028-06-30,Manipur,11.894555,forecast
+2028-07-30,Manipur,12.752927,forecast
+2028-08-30,Manipur,12.810601,forecast
+2028-09-30,Manipur,12.934557,forecast
+2028-10-30,Manipur,13.866919,forecast
+2028-11-30,Manipur,14.092893,forecast
+2028-12-30,Manipur,15.083086,forecast
+2029-01-30,Manipur,11.746164,forecast
+2029-02-28,Manipur,13.25808,forecast
+2029-03-30,Manipur,15.349407,forecast
+2029-04-30,Manipur,12.868085,forecast
+2029-05-30,Manipur,13.3522415,forecast
+2029-06-30,Manipur,13.039234,forecast
+2029-07-30,Manipur,14.416318,forecast
+2029-08-30,Manipur,14.402439,forecast
+2029-09-30,Manipur,14.361293,forecast
+2029-10-30,Manipur,14.274736,forecast
+2029-11-30,Manipur,13.8347225,forecast
+2029-12-30,Manipur,14.402893,forecast
+2030-01-30,Manipur,11.187216,forecast
+2030-02-28,Manipur,12.699131,forecast
+2030-03-30,Manipur,15.507956,forecast
+2030-04-30,Manipur,12.533344,forecast
+2030-05-30,Manipur,13.017501,forecast
+2030-06-30,Manipur,12.7044935,forecast
+2030-07-30,Manipur,14.467827,forecast
+2030-08-30,Manipur,11.572524,forecast
+2030-09-30,Manipur,12.145071,forecast
+2030-10-30,Manipur,12.058515,forecast
+2030-11-30,Manipur,11.745237,forecast
