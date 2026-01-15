@@ -279,21 +279,33 @@ def cluster_states(df_agg):
     metrics_df['cluster'] = kmeans.fit_predict(X_scaled)
     best_score = silhouette_score(X_scaled, metrics_df['cluster'])
     
-    # Name clusters based on their characteristics (percentile-based)
+    # Name clusters based on BOTH market size and adoption rate
     cluster_stats = metrics_df.groupby('cluster').agg({
-        'total_evs': 'mean',
+        'total_evs': 'sum',
         'adoption_rate': 'mean',
         'growth_rate': 'mean'
     }).reset_index()
     
-    # Sort clusters by total_evs to assign meaningful names
-    cluster_stats = cluster_stats.sort_values('total_evs', ascending=False)
-    
-    # Assign names based on rank
-    names = ['EV Leaders', 'High Adopters', 'Growing Markets', 'Emerging Markets', 'Early Stage']
+    # Assign meaningful names based on characteristics
     cluster_names = {}
-    for i, row in enumerate(cluster_stats.itertuples()):
-        cluster_names[row.cluster] = names[i] if i < len(names) else f"Cluster {i+1}"
+    for _, row in cluster_stats.iterrows():
+        cluster_id = row['cluster']
+        avg_adoption = row['adoption_rate']
+        total_evs = row['total_evs']
+        
+        # Dual criteria naming
+        if avg_adoption >= 7 and total_evs >= 20000:
+            name = "Market & Adoption Leaders"
+        elif avg_adoption >= 7:
+            name = "High Adoption Rate"
+        elif total_evs >= 30000:
+            name = "Large EV Markets"
+        elif avg_adoption >= 4:
+            name = "Growing Adopters"
+        else:
+            name = "Emerging Markets"
+        
+        cluster_names[cluster_id] = name
     
     metrics_df['cluster_name'] = metrics_df['cluster'].map(cluster_names)
     
