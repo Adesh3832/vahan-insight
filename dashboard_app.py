@@ -1173,10 +1173,10 @@ with tab4:
                 petrol_hist = petrol_df[petrol_df['date'] <= '2025-12-31'].copy()
                 petrol_fc = petrol_df[petrol_df['date'] > '2025-12-31'].copy()
                 
-                # Smooth with quarterly rolling average
-                petrol_fc['forecast'] = petrol_fc['forecast'].rolling(window=4, center=True, min_periods=1).mean()
-                petrol_fc['upper_bound'] = petrol_fc['upper_bound'].rolling(window=4, center=True, min_periods=1).mean()
-                petrol_fc['lower_bound'] = petrol_fc['lower_bound'].rolling(window=4, center=True, min_periods=1).mean()
+                # Smooth with 6-month rolling average (smoother curve)
+                petrol_fc['forecast'] = petrol_fc['forecast'].rolling(window=6, center=True, min_periods=1).mean()
+                petrol_fc['upper_bound'] = petrol_fc['upper_bound'].rolling(window=6, center=True, min_periods=1).mean()
+                petrol_fc['lower_bound'] = petrol_fc['lower_bound'].rolling(window=6, center=True, min_periods=1).mean()
                 
                 fig = go.Figure()
                 

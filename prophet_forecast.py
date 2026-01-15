@@ -210,16 +210,17 @@ def main():
     # Load and prepare PETROL data
     df_petrol = load_and_prepare_data('PETROL')
     
-    # Train Prophet for PETROL (use different parameters)
+    # Train Prophet for PETROL - very smooth with slight deceleration
     print("\n🔮 Training Prophet model for PETROL...")
+    
     model_petrol = Prophet(
         growth='linear',
-        yearly_seasonality=5,
+        yearly_seasonality=2,  # Very minimal seasonality for smooth line
         weekly_seasonality=False,
         daily_seasonality=False,
         seasonality_mode='additive',
-        changepoint_prior_scale=0.05,
-        seasonality_prior_scale=0.5,
+        changepoint_prior_scale=0.001,  # Very smooth - almost no changepoints
+        seasonality_prior_scale=0.01,  # Very minimal seasonality
         interval_width=0.95
     )
     model_petrol.fit(df_petrol)
@@ -228,6 +229,14 @@ def main():
     # Generate PETROL forecast
     future_petrol = model_petrol.make_future_dataframe(periods=60, freq='ME')
     forecast_petrol = model_petrol.predict(future_petrol)
+    
+    # Apply deceleration factor to forecast (simulate market saturation as EV grows)
+    # Start from 2026, apply 0.5% monthly deceleration
+    forecast_only_mask = forecast_petrol['ds'] > df_petrol['ds'].max()
+    decel_factor = np.power(0.998, np.arange(forecast_only_mask.sum()))  # 0.2% monthly slowdown
+    forecast_petrol.loc[forecast_only_mask, 'yhat'] *= decel_factor
+    forecast_petrol.loc[forecast_only_mask, 'yhat_lower'] *= decel_factor
+    forecast_petrol.loc[forecast_only_mask, 'yhat_upper'] *= decel_factor
     
     # Save PETROL forecast
     petrol_output = forecast_petrol[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].copy()
