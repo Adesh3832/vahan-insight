@@ -1,0 +1,52 @@
+Vahan-Insight: A Predictive Analytics Platform for the Indian Auto Ecosystem."
+
+Phase 1: Data Engineering & Cleaning (Antigravity)
+In Antigravity, you won't just "clean" the data; you will build a reusable pipeline.
+
+The Challenge: Indian registration data is often messy (misspelled manufacturers, inconsistent RTO codes).
+
+Tasks:
+
+Schema Enforcement: Ensure Registration Date is datetime and Fuel Type is categorical.
+
+Manufacturer Normalization: Use fuzzy matching (or a small LLM call) to group "Maruti," "Maruti Suzuki," and "MSIL" as one entity.
+
+Feature Engineering: Extract State from RTO codes (e.g., KA = Karnataka) to allow for regional analysis.
+
+Phase 2: The "EV Revolution" Deep Dive (Today's Standard)
+Standard analysis is boring. To hit the "Senior" level, you need to track Disruption.
+
+Trend Analysis: Compare the growth rate of EVs vs. ICE (Internal Combustion Engines) from 2020 to 2025.
+
+Geospatial Mapping: Create a heat map of India showing which states reached "EV Maturity" fastest. (Use libraries like Folium or Plotly).
+
+Correlation: Link the data to external factors (e.g., Did registration spike during FAME-II subsidy announcements?).
+
+Phase 3: Machine Learning (The MLOps Layer)
+WBD wants "inference pipelines at scale."
+
+Forecasting: Use Prophet or XGBoost to predict vehicle registration volumes for the remainder of 2026.
+
+Clustering: Use K-Means to cluster Indian states into "Early Adopters," "Steady Growth," and "Lagging" markets based on registration patterns.
+
+Model Registry: Store your models in a way that they can be easily re-loaded for the API.
+
+Phase 4: The Gen AI "Intelligence Agent"
+This is the "Gen AI Architect" part for your WBD goal.
+
+The Insight Agent: Build a RAG-based interface where a user asks: "Why did EV registrations in Delhi dip in Q3 2023?"
+
+Logic: The agent queries your analyzed data, looks at your trend graphs, and provides a natural language summary: "Registrations dipped by 12% likely due to the reduction in the FAME-II subsidy during that window."
+
+Phase 5: Deployment (Render)
+To show you can "implement and consume RESTful APIs" (WBD requirement):
+
+API: Build a FastAPI backend.
+
+/stats/{state}: Returns real-time registration metrics.
+
+/predict/2026: Returns the ML forecast.
+
+Deployment: Host the FastAPI app on Render.
+
+Frontend: A simple Streamlit dashboard (also on Render) to visualize the graphs.

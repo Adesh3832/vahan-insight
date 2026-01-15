@@ -1,0 +1,331 @@
+{
+    "manufacturer_groups": {
+        "MARUTI": [
+            "MARUTI",
+            "MARUTI SUZUKI",
+            "MARUTI SUZUKI INDIA",
+            "MARUTI SUZUKI INDIA LTD",
+            "MARUTI SUZUKI INDIA LIMITED",
+            "MARUTI UDYOG",
+            "MARUTI UDYOG LTD",
+            "MSIL"
+        ],
+        "HYUNDAI": [
+            "HYUNDAI",
+            "HYUNDAI MOTOR",
+            "HYUNDAI MOTOR INDIA",
+            "HYUNDAI MOTOR INDIA LTD",
+            "HYUNDAI MOTORS"
+        ],
+        "TATA": [
+            "TATA",
+            "TATA MOTORS",
+            "TATA MOTORS LTD",
+            "TATA MOTORS LIMITED"
+        ],
+        "MAHINDRA": [
+            "MAHINDRA",
+            "MAHINDRA AND MAHINDRA",
+            "MAHINDRA & MAHINDRA",
+            "M AND M",
+            "M&M",
+            "MAHINDRA AND MAHINDRA LTD"
+        ],
+        "HONDA": [
+            "HONDA",
+            "HONDA CARS",
+            "HONDA CARS INDIA",
+            "HONDA CARS INDIA LTD",
+            "HONDA MOTORCYCLE",
+            "HMSI",
+            "HONDA MOTOR"
+        ],
+        "TOYOTA": [
+            "TOYOTA",
+            "TOYOTA KIRLOSKAR",
+            "TOYOTA KIRLOSKAR MOTOR",
+            "TOYOTA KIRLOSKAR MOTOR PVT LTD"
+        ],
+        "KIA": [
+            "KIA",
+            "KIA MOTORS",
+            "KIA INDIA",
+            "KIA MOTORS INDIA"
+        ],
+        "MG": [
+            "MG",
+            "MG MOTOR",
+            "MG MOTOR INDIA",
+            "MORRIS GARAGES"
+        ],
+        "SKODA": [
+            "SKODA",
+            "SKODA AUTO",
+            "SKODA AUTO INDIA"
+        ],
+        "VOLKSWAGEN": [
+            "VOLKSWAGEN",
+            "VW",
+            "VOLKSWAGEN INDIA"
+        ],
+        "RENAULT": [
+            "RENAULT",
+            "RENAULT INDIA",
+            "RENAULT NISSAN"
+        ],
+        "NISSAN": [
+            "NISSAN",
+            "NISSAN MOTOR",
+            "NISSAN INDIA"
+        ],
+        "FORD": [
+            "FORD",
+            "FORD INDIA",
+            "FORD MOTOR"
+        ],
+        "CHEVROLET": [
+            "CHEVROLET",
+            "GM INDIA",
+            "GENERAL MOTORS"
+        ],
+        "FIAT": [
+            "FIAT",
+            "FIAT INDIA",
+            "FIAT CHRYSLER"
+        ],
+        "JEEP": [
+            "JEEP",
+            "JEEP INDIA",
+            "FCA INDIA"
+        ],
+        "BMW": [
+            "BMW",
+            "BMW INDIA",
+            "BMW MOTORRAD"
+        ],
+        "MERCEDES": [
+            "MERCEDES",
+            "MERCEDES BENZ",
+            "MERCEDES-BENZ",
+            "MERCEDES BENZ INDIA"
+        ],
+        "AUDI": [
+            "AUDI",
+            "AUDI INDIA"
+        ],
+        "VOLVO": [
+            "VOLVO",
+            "VOLVO CARS",
+            "VOLVO AUTO INDIA"
+        ],
+        "JAGUAR": [
+            "JAGUAR",
+            "JAGUAR LAND ROVER",
+            "JLR"
+        ],
+        "LAND ROVER": [
+            "LAND ROVER",
+            "LANDROVER"
+        ],
+        "PORSCHE": [
+            "PORSCHE",
+            "PORSCHE INDIA"
+        ],
+        "LAMBORGHINI": [
+            "LAMBORGHINI"
+        ],
+        "FERRARI": [
+            "FERRARI"
+        ],
+        "BENTLEY": [
+            "BENTLEY"
+        ],
+        "ROLLS ROYCE": [
+            "ROLLS ROYCE",
+            "ROLLS-ROYCE"
+        ],
+        "HERO": [
+            "HERO",
+            "HERO MOTOCORP",
+            "HERO HONDA",
+            "HERO ELECTRIC"
+        ],
+        "BAJAJ": [
+            "BAJAJ",
+            "BAJAJ AUTO",
+            "BAJAJ AUTO LTD"
+        ],
+        "TVS": [
+            "TVS",
+            "TVS MOTOR",
+            "TVS MOTORS"
+        ],
+        "ROYAL ENFIELD": [
+            "ROYAL ENFIELD",
+            "EICHER MOTORS"
+        ],
+        "YAMAHA": [
+            "YAMAHA",
+            "YAMAHA MOTOR",
+            "INDIA YAMAHA MOTOR"
+        ],
+        "SUZUKI": [
+            "SUZUKI",
+            "SUZUKI MOTORCYCLE",
+            "SUZUKI MOTORCYCLES"
+        ],
+        "KAWASAKI": [
+            "KAWASAKI",
+            "KAWASAKI INDIA"
+        ],
+        "KTM": [
+            "KTM",
+            "KTM INDIA"
+        ],
+        "HARLEY": [
+            "HARLEY",
+            "HARLEY DAVIDSON",
+            "HARLEY-DAVIDSON"
+        ],
+        "TRIUMPH": [
+            "TRIUMPH",
+            "TRIUMPH MOTORCYCLES"
+        ],
+        "DUCATI": [
+            "DUCATI",
+            "DUCATI INDIA"
+        ],
+        "APRILIA": [
+            "APRILIA"
+        ],
+        "VESPA": [
+            "VESPA",
+            "PIAGGIO"
+        ],
+        "OLA": [
+            "OLA",
+            "OLA ELECTRIC"
+        ],
+        "ATHER": [
+            "ATHER",
+            "ATHER ENERGY"
+        ],
+        "REVOLT": [
+            "REVOLT",
+            "REVOLT MOTORS"
+        ],
+        "OKINAWA": [
+            "OKINAWA",
+            "OKINAWA AUTOTECH"
+        ],
+        "AMPERE": [
+            "AMPERE",
+            "AMPERE VEHICLES"
+        ],
+        "BGAUSS": [
+            "BGAUSS"
+        ],
+        "SIMPLE": [
+            "SIMPLE",
+            "SIMPLE ENERGY"
+        ],
+        "ULTRAVIOLETTE": [
+            "ULTRAVIOLETTE"
+        ],
+        "TORK": [
+            "TORK",
+            "TORK MOTORS"
+        ],
+        "ASHOK LEYLAND": [
+            "ASHOK LEYLAND",
+            "ASHOK LEYLAND LTD"
+        ],
+        "EICHER": [
+            "EICHER",
+            "EICHER TRUCKS"
+        ],
+        "BHARAT BENZ": [
+            "BHARAT BENZ",
+            "BHARATBENZ",
+            "DAIMLER INDIA"
+        ],
+        "FORCE": [
+            "FORCE",
+            "FORCE MOTORS"
+        ],
+        "ISUZU": [
+            "ISUZU",
+            "ISUZU MOTORS"
+        ],
+        "SWARAJ": [
+            "SWARAJ",
+            "SWARAJ MAZDA"
+        ],
+        "JCB": [
+            "JCB",
+            "JCB INDIA"
+        ],
+        "CATERPILLAR": [
+            "CATERPILLAR",
+            "CAT"
+        ],
+        "JOHN DEERE": [
+            "JOHN DEERE",
+            "DEERE"
+        ],
+        "NEW HOLLAND": [
+            "NEW HOLLAND"
+        ],
+        "SONALIKA": [
+            "SONALIKA",
+            "SONALIKA TRACTORS"
+        ],
+        "ESCORTS": [
+            "ESCORTS",
+            "ESCORTS KUBOTA"
+        ],
+        "MASSEY FERGUSON": [
+            "MASSEY FERGUSON",
+            "TAFE"
+        ]
+    },
+    "fuel_categories": {
+        "EV": [
+            "ELECTRIC(BOV)",
+            "PURE EV",
+            "ELECTRIC",
+            "BATTERY"
+        ],
+        "HYBRID": [
+            "STRONG HYBRID EV",
+            "PETROL/HYBRID",
+            "DIESEL/HYBRID",
+            "PLUG-IN HYBRID EV",
+            "PETROL(E20)/HYBRID",
+            "PETROL/HYBRID/CNG",
+            "PETROL(E20)/HYBRID/CNG"
+        ],
+        "CNG": [
+            "CNG ONLY",
+            "PETROL/CNG",
+            "PETROL(E20)/CNG"
+        ],
+        "LPG": [
+            "LPG ONLY",
+            "PETROL/LPG",
+            "PETROL(E20)/LPG"
+        ],
+        "PETROL": [
+            "PETROL",
+            "PETROL(E20)"
+        ],
+        "DIESEL": [
+            "DIESEL"
+        ],
+        "OTHER": [
+            "NOT APPLICABLE",
+            "ETHANOL(E100)",
+            "LNG"
+        ]
+    }
+}

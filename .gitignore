@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# Environment variables
+.env
+.env.local
+
+# Kaggle credentials
+.kaggle/
+kaggle.json
+
+# Data files (large datasets)
+data/*.csv
+!data/.gitkeep
+
+# Visualizations (can regenerate)
+visualizations/*.html
+!visualizations/.gitkeep
+
+# Streamlit cache
+.streamlit/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
