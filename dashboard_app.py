@@ -969,6 +969,11 @@ with tab4:
                 historical = prophet_df[prophet_df['date'] <= '2025-12-31'].copy()
                 forecast_only = prophet_df[prophet_df['date'] > '2025-12-31'].copy()
                 
+                # Smooth the forecast with 6-month rolling average to remove spikes
+                forecast_only['forecast'] = forecast_only['forecast'].rolling(window=6, center=True, min_periods=1).mean()
+                forecast_only['upper_bound'] = forecast_only['upper_bound'].rolling(window=6, center=True, min_periods=1).mean()
+                forecast_only['lower_bound'] = forecast_only['lower_bound'].rolling(window=6, center=True, min_periods=1).mean()
+                
                 # Create figure with confidence intervals
                 fig = go.Figure()
                 

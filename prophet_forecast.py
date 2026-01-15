@@ -70,17 +70,16 @@ def train_prophet_model(df):
     # Prophet with settings for strong linear trend
     model = Prophet(
         growth='linear',
-        yearly_seasonality=True,
+        yearly_seasonality=5,  # Reduced from True (auto=10)
         weekly_seasonality=False,
         daily_seasonality=False,
-        seasonality_mode='multiplicative',
-        changepoint_prior_scale=0.1,  # Moderate - trust the trend
-        seasonality_prior_scale=10,
+        seasonality_mode='additive',  # Changed to additive for less extreme swings
+        changepoint_prior_scale=0.05,  # Less flexible = smoother trend
+        seasonality_prior_scale=0.5,  # Much weaker seasonality
         interval_width=0.95
     )
     
-    # Add monthly seasonality
-    model.add_seasonality(name='monthly', period=30.5, fourier_order=3)
+    # Remove custom monthly seasonality - it was causing wild swings
     
     # Fit the model
     model.fit(df)
