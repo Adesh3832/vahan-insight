@@ -1109,33 +1109,54 @@ with tab4:
         col1, col2 = st.columns(2)
         
         with col1:
-            st.markdown("### 🔑 Key Drivers of EV Growth")
+            st.markdown("### 🏛️ FAME Policy Impact on EV Growth")
+            
+            # Calculate EV growth by year to show FAME impact
+            ev_by_year = df_agg_filtered[df_agg_filtered['fuel_category'] == 'EV'].groupby('reg_year')['vehicleCount'].sum().reset_index()
+            ev_by_year.columns = ['Year', 'EV Registrations']
+            
+            # Add FAME phase labels
+            def get_fame_phase(year):
+                if year < 2019:
+                    return 'Pre-FAME II'
+                elif year <= 2024:
+                    return 'FAME II (2019-2024)'
+                else:
+                    return 'Post-FAME II'
+            
+            ev_by_year['Policy Phase'] = ev_by_year['Year'].apply(get_fame_phase)
             
             fig = px.bar(
-                importance_df.head(6),
-                x='importance_pct',
-                y='feature',
-                orientation='h',
-                color='importance_pct',
-                color_continuous_scale='Blues',
-                labels={'importance_pct': 'Importance (%)', 'feature': 'Feature'}
+                ev_by_year,
+                x='Year',
+                y='EV Registrations',
+                color='Policy Phase',
+                color_discrete_map={
+                    'Pre-FAME II': '#ef4444',
+                    'FAME II (2019-2024)': '#10b981',
+                    'Post-FAME II': '#6366f1'
+                },
+                labels={'EV Registrations': 'Annual EV Registrations'}
             )
             fig.update_layout(
                 height=300,
                 margin=dict(l=0, r=0, t=0, b=0),
                 paper_bgcolor='rgba(0,0,0,0)',
                 plot_bgcolor='rgba(0,0,0,0)',
-                showlegend=False,
-                coloraxis_showscale=False,
-                yaxis={'categoryorder': 'total ascending'}
+                legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5)
             )
             st.plotly_chart(fig, use_container_width=True)
             
-            st.info("""
-            **Key Insights:**
-            - 📊 **Recent trends** (rolling_avg, lag features) are strong predictors
-            - 📈 **YoY growth** indicates momentum continuation
-            - 📅 **Seasonality** (month) matters for registration patterns
+            # Calculate FAME II impact
+            pre_fame = ev_by_year[ev_by_year['Policy Phase'] == 'Pre-FAME II']['EV Registrations'].sum()
+            fame_ii = ev_by_year[ev_by_year['Policy Phase'] == 'FAME II (2019-2024)']['EV Registrations'].sum()
+            growth_pct = ((fame_ii - pre_fame) / (pre_fame + 1)) * 100 if pre_fame > 0 else 0
+            
+            st.success(f"""
+            **FAME II Impact:**
+            - 📈 EV registrations grew **{growth_pct:,.0f}%** during FAME II period
+            - 💰 ₹10,000 Cr subsidy allocation drove adoption
+            - 🔋 Battery EV incentives: ₹10,000-15,000/kWh
             """)
         
         with col2:
