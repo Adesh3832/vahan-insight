@@ -996,7 +996,7 @@ with tab4:
             )
             # Add vertical line at forecast start
             fig.add_vline(x=pd.Timestamp('2025-12-31'), line_dash="dash", line_color="gray", 
-                          annotation_text="Forecast Start")
+                          annotation=dict(text="Forecast Start", showarrow=False))
             st.plotly_chart(fig, use_container_width=True)
         
         with col2:
