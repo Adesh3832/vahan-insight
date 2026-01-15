@@ -33,9 +33,6 @@ data/*.csv
 visualizations/*.html
 !visualizations/.gitkeep
 
-# Streamlit cache
-.streamlit/
-
 # macOS
 .DS_Store
 
