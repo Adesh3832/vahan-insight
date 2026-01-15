@@ -1011,19 +1011,15 @@ with tab4:
                         # Smooth petrol with quarterly rolling average
                         petrol_df['forecast'] = petrol_df['forecast'].rolling(window=4, center=True, min_periods=1).mean()
                         
-                        # Scale to EV range for visual comparison
-                        ev_scale = historical['forecast'].mean()
-                        petrol_scale = petrol_df['forecast'].mean()
-                        scale_factor = ev_scale / petrol_scale if petrol_scale > 0 else 1
-                        
-                        # Petrol line (full: historical + forecast)
+                        # NO SCALING - use secondary Y-axis to show actual petrol values
+                        # Petrol line on secondary y-axis
                         fig.add_trace(go.Scatter(
                             x=petrol_df['date'],
-                            y=petrol_df['forecast'] * scale_factor,
-                            name='Petrol (scaled)',
-                            line=dict(color='#ef4444', width=2, dash='dot'),
+                            y=petrol_df['forecast'],
+                            name='Petrol (right axis)',
+                            line=dict(color='#ef4444', width=3),
                             mode='lines',
-                            opacity=0.8
+                            yaxis='y2'
                         ))
                 
                 # EV Historical line
@@ -1056,20 +1052,32 @@ with tab4:
                     mode='lines'
                 ))
                 
-                fig.update_layout(
+                # Layout with optional secondary Y-axis for petrol
+                layout_config = dict(
                     height=350,
-                    margin=dict(l=0, r=0, t=0, b=0),
+                    margin=dict(l=0, r=60 if show_petrol else 0, t=0, b=0),
                     paper_bgcolor='rgba(0,0,0,0)',
                     plot_bgcolor='rgba(0,0,0,0)',
                     legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5),
                     xaxis_title="Date",
-                    yaxis_title="Monthly Registrations"
+                    yaxis=dict(title="EV Registrations", side='left', showgrid=True),
                 )
+                
+                if show_petrol:
+                    layout_config['yaxis2'] = dict(
+                        title="Petrol Registrations",
+                        side='right',
+                        overlaying='y',
+                        showgrid=False,
+                        tickformat=',d'
+                    )
+                
+                fig.update_layout(**layout_config)
                 st.plotly_chart(fig, use_container_width=True)
                 
                 # Caption based on mode
                 if show_petrol:
-                    st.caption("🌍 **Environmental Impact:** As EV adoption rises, petrol vehicle registrations show declining trend. Petrol scaled to EV range for comparison.")
+                    st.caption("🌍 **Environmental Impact:** Petrol (red, right axis: ~40-50K/mo) still dominates, but EV (left axis: ~5-8K/mo) is growing 3x faster. The gap is narrowing!")
                 else:
                     # Load metrics
                     prophet_metrics_path = models_dir / "prophet_metrics.json"
