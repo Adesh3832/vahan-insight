@@ -1002,8 +1002,8 @@ with tab4:
                 
                 # If showing petrol comparison
                 if show_petrol:
-                    # Get historical petrol data
-                    petrol_hist = df_agg_filtered[df_agg_filtered['fuel_category'] == 'Petrol']
+                    # Get historical petrol data (uppercase PETROL in dataset)
+                    petrol_hist = df_agg_filtered[df_agg_filtered['fuel_category'] == 'PETROL']
                     petrol_monthly = petrol_hist.groupby(pd.Grouper(key='registration_date', freq='ME'))['vehicleCount'].sum().reset_index()
                     petrol_monthly.columns = ['date', 'count']
                     
