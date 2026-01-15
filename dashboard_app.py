@@ -921,7 +921,7 @@ with tab3:
 # ============= TAB 4: ML INSIGHTS =============
 with tab4:
     st.markdown("### 🤖 Machine Learning Insights")
-    st.info("**Powered by XGBoost** | Forecasting EV adoption trends for 2026-2030")
+    st.info("**Powered by Prophet** | Forecasting EV adoption trends for 2026-2030")
     
     # Check if ML models exist
     models_dir = base_dir / "models"
@@ -930,24 +930,49 @@ with tab4:
         st.warning("⚠️ ML models not yet trained. Run `python ml_models.py` to generate forecasts.")
     else:
         # Load ML results
-        forecast_df = pd.read_csv(models_dir / "forecast_2026_2030.csv")
         clusters_df = pd.read_csv(models_dir / "state_clusters.csv")
         importance_df = pd.read_csv(models_dir / "feature_importance.csv")
         
         import json
-        with open(models_dir / "metrics_report.json") as f:
-            metrics = json.load(f)
         
-        # Model Performance Metrics
-        col1, col2, col3, col4 = st.columns(4)
-        with col1:
-            st.metric("📊 R² Score", f"{metrics['r2_test']:.3f}", "Good fit" if metrics['r2_test'] > 0.8 else "Moderate")
-        with col2:
-            st.metric("📉 RMSE", f"{metrics['rmse_test']:.1f}", "Monthly registrations")
-        with col3:
-            st.metric("🎯 MAE", f"{metrics['mae_test']:.1f}", "Avg error")
-        with col4:
-            st.metric("🔍 Silhouette", f"{metrics['silhouette_score']:.3f}", "Cluster quality")
+        # Load Prophet metrics if available, else fall back to XGBoost
+        prophet_metrics_path = models_dir / "prophet_metrics.json"
+        xgb_metrics_path = models_dir / "metrics_report.json"
+        
+        if prophet_metrics_path.exists():
+            with open(prophet_metrics_path) as f:
+                p_metrics = json.load(f)
+            
+            # Model Performance Metrics - Prophet
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                st.metric("📈 2026 Forecast", f"{p_metrics.get('2026_avg_monthly', 0):,.0f}/mo", "Monthly EVs")
+            with col2:
+                st.metric("🚀 2030 Forecast", f"{p_metrics.get('2030_avg_monthly', 0):,.0f}/mo", "Monthly EVs")
+            with col3:
+                st.metric("📊 5yr Growth", f"{p_metrics.get('growth_rate_5yr', 0):.0f}%", "CAGR ~13%")
+            with col4:
+                # Load clustering silhouette from XGBoost metrics
+                if xgb_metrics_path.exists():
+                    with open(xgb_metrics_path) as f:
+                        xgb_metrics = json.load(f)
+                    st.metric("🔍 Silhouette", f"{xgb_metrics.get('silhouette_score', 0):.3f}", "Cluster quality")
+                else:
+                    st.metric("📅 Training Data", f"{p_metrics.get('training_samples', 0)}", "Months")
+        else:
+            with open(xgb_metrics_path) as f:
+                metrics = json.load(f)
+            
+            # Model Performance Metrics - XGBoost fallback
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                st.metric("📊 R² Score", f"{metrics['r2_test']:.3f}", "Good fit" if metrics['r2_test'] > 0.8 else "Moderate")
+            with col2:
+                st.metric("📉 RMSE", f"{metrics['rmse_test']:.1f}", "Monthly registrations")
+            with col3:
+                st.metric("🎯 MAE", f"{metrics['mae_test']:.1f}", "Avg error")
+            with col4:
+                st.metric("🔍 Silhouette", f"{metrics['silhouette_score']:.3f}", "Cluster quality")
         
         st.markdown("---")
         
