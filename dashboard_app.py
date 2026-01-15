@@ -57,15 +57,57 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Data loading
+# Data loading with auto-setup for Streamlit Cloud
 @st.cache_data
 def load_data():
-    """Load cleaned datasets"""
+    """Load cleaned datasets - auto-run pipeline if files don't exist"""
     base_dir = Path(__file__).parent
     data_dir = base_dir / "data"
     
-    df_main = pd.read_csv(data_dir / "vehicle_registrations_cleaned.csv")
-    df_agg = pd.read_csv(data_dir / "state_month_fuel_cleaned.csv")
+    main_file = data_dir / "vehicle_registrations_cleaned.csv"
+    agg_file = data_dir / "state_month_fuel_cleaned.csv"
+    
+    # Check if cleaned files exist
+    if not main_file.exists() or not agg_file.exists():
+        st.info("🔄 First-time setup: Downloading and processing data... (this may take 2-3 minutes)")
+        
+        try:
+            # Run data ingestion
+            import subprocess
+            import sys
+            
+            with st.spinner("Downloading data from Kaggle..."):
+                result = subprocess.run(
+                    [sys.executable, str(base_dir / "ingest_data.py")],
+                    capture_output=True,
+                    text=True,
+                    timeout=300
+                )
+                if result.returncode != 0:
+                    st.error(f"Data ingestion failed: {result.stderr}")
+                    st.stop()
+            
+            with st.spinner("Cleaning and processing data..."):
+                result = subprocess.run(
+                    [sys.executable, str(base_dir / "data_cleaning.py")],
+                    capture_output=True,
+                    text=True,
+                    timeout=300
+                )
+                if result.returncode != 0:
+                    st.error(f"Data cleaning failed: {result.stderr}")
+                    st.stop()
+            
+            st.success("✅ Data setup complete!")
+            
+        except Exception as e:
+            st.error(f"Setup failed: {str(e)}")
+            st.info("Please check that Kaggle credentials are correctly set in Streamlit secrets.")
+            st.stop()
+    
+    # Load the cleaned data
+    df_main = pd.read_csv(main_file)
+    df_agg = pd.read_csv(agg_file)
     
     # Filter valid years
     df_main = df_main[(df_main['reg_year'] >= 2020) & (df_main['reg_year'] <= 2025)].copy()
@@ -77,7 +119,7 @@ def load_data():
     
     return df_main, df_agg
 
-# Load data
+# Load data (will auto-setup if needed)
 df_main, df_agg = load_data()
 
 # Sidebar
