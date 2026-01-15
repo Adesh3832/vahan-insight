@@ -39,6 +39,8 @@ def setup_kaggle_credentials():
     1. Streamlit secrets (for cloud deployment)
     2. Environment variables
     3. .env file
+    
+    Returns True on success, raises EnvironmentError on failure
     """
     kaggle_dir = Path.home() / ".kaggle"
     kaggle_json = kaggle_dir / "kaggle.json"
@@ -56,14 +58,14 @@ def setup_kaggle_credentials():
             with open(kaggle_json, 'w') as f:
                 json.dump({"username": username, "key": key}, f)
             kaggle_json.chmod(0o600)
-            return
+            return True
     except (ImportError, AttributeError, KeyError):
         pass  # Streamlit not available or secrets not set
     
     # Check if kaggle.json already exists
     if kaggle_json.exists():
         logger.info("✓ Using existing ~/.kaggle/kaggle.json")
-        return
+        return True
     
     # Try environment variables
     username = os.getenv('KAGGLE_USERNAME')
@@ -75,7 +77,7 @@ def setup_kaggle_credentials():
         with open(kaggle_json, 'w') as f:
             json.dump({"username": username, "key": key}, f)
         kaggle_json.chmod(0o600)
-        return
+        return True
     
     # Try .env file
     env_path = Path(__file__).parent / '.env'
@@ -90,7 +92,7 @@ def setup_kaggle_credentials():
             with open(kaggle_json, 'w') as f:
                 json.dump({"username": username, "key": key}, f)
             kaggle_json.chmod(0o600)
-            return
+            return True
     
     raise EnvironmentError(
         "Kaggle credentials not found! Please set up credentials via:\n"
