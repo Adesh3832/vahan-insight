@@ -56,10 +56,11 @@ def train_prophet_model(df):
     print("\n🔮 Training Prophet forecasting model...")
     
     # Calculate realistic cap for post-processing
+    # Industry forecast: 50% CAGR = 7.6x growth over 5 years
     current_max = df['y'].max()
-    cap = current_max * 3  # Cap at 3x current maximum (realistic 5-year ceiling)
+    cap = current_max * 8  # Cap at 8x current maximum (50% CAGR ceiling)
     
-    print(f"  Current max: {current_max:,.0f}, Growth cap: {cap:,.0f}")
+    print(f"  Current max: {current_max:,.0f}, Growth cap: {cap:,.0f} (50% CAGR target)")
     
     # Initialize Prophet with linear growth (more stable)
     model = Prophet(
@@ -68,7 +69,7 @@ def train_prophet_model(df):
         weekly_seasonality=False,
         daily_seasonality=False,
         seasonality_mode='multiplicative',
-        changepoint_prior_scale=0.02,  # Conservative trend changes
+        changepoint_prior_scale=0.15,  # More flexible to capture strong growth trend
         seasonality_prior_scale=5,
         interval_width=0.95
     )
