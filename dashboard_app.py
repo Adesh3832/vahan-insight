@@ -949,11 +949,11 @@ with tab4:
                 r2 = p_metrics.get('r2_score', 0)
                 st.metric("📊 R² Score", f"{r2:.3f}", "Good fit" if r2 > 0.8 else "Moderate")
             with col2:
-                st.metric("📉 RMSE", f"{p_metrics.get('rmse', 0):.0f}", "Monthly registrations")
+                st.metric("📈 2026 Forecast", f"{p_metrics.get('2026_avg_monthly', 0):,.0f}/mo", "Monthly EVs")
             with col3:
-                st.metric("🎯 MAE", f"{p_metrics.get('mae', 0):.0f}", "Avg error")
+                st.metric("🚀 2030 Forecast", f"{p_metrics.get('2030_avg_monthly', 0):,.0f}/mo", "Monthly EVs")
             with col4:
-                st.metric("📈 MAPE", f"{p_metrics.get('mape', 0):.1f}%", "Pct error")
+                st.metric("📊 5yr Growth", f"{p_metrics.get('growth_rate_5yr', 0):.0f}%", "Projected")
         else:
             with open(xgb_metrics_path) as f:
                 metrics = json.load(f)
