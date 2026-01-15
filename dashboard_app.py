@@ -957,62 +957,72 @@ with tab4:
         with col1:
             st.markdown("### 📈 EV Adoption Forecast (2026-2030)")
             
-            # Get historical data for comparison
-            ev_historical = df_agg_filtered[df_agg_filtered['fuel_category'] == 'EV']
-            hist_monthly = ev_historical.groupby(pd.Grouper(key='registration_date', freq='ME'))['vehicleCount'].sum().reset_index()
-            hist_monthly.columns = ['date', 'count']
-            hist_monthly['type'] = 'Historical'
+            # Check if Prophet forecast exists
+            prophet_forecast_path = models_dir / "prophet_forecast.csv"
             
-            # Use ALL states for forecast (not just top 5)
-            forecast_df_copy = forecast_df.copy()
-            forecast_df_copy['date'] = pd.to_datetime(forecast_df_copy['date'])
-            
-            # Aggregate forecast by date (all states)
-            forecast_agg = forecast_df_copy.groupby('date')['predicted_count'].sum().reset_index()
-            forecast_agg.columns = ['date', 'count']
-            
-            # Scale forecast to match historical trend
-            # Get the last historical value and first forecast value to calculate scaling factor
-            last_hist = hist_monthly[hist_monthly['date'] < '2025-12-01']['count'].tail(3).mean()
-            first_forecast = forecast_agg['count'].head(3).mean()
-            scale_factor = last_hist / first_forecast if first_forecast > 0 else 1
-            
-            # Apply growth multiplier (EV typically grows 20-30% YoY)
-            forecast_agg['count'] = forecast_agg['count'] * scale_factor
-            
-            # Add continued growth (15% annual growth)
-            days_from_start = (forecast_agg['date'] - forecast_agg['date'].min()).dt.days
-            growth_multiplier = 1 + (0.15 * days_from_start / 365)  # 15% annual growth
-            forecast_agg['count'] = forecast_agg['count'] * growth_multiplier
-            
-            # Smooth forecast with 3-month rolling average to reduce fluctuations
-            forecast_agg['count'] = forecast_agg['count'].rolling(window=3, center=True, min_periods=1).mean()
-            
-            forecast_agg['type'] = 'Forecast'
-            
-            # Combine
-            combined = pd.concat([
-                hist_monthly[['date', 'count', 'type']],
-                forecast_agg[['date', 'count', 'type']]
-            ])
-            
-            fig = px.line(
-                combined,
-                x='date',
-                y='count',
-                color='type',
-                color_discrete_map={'Historical': '#667eea', 'Forecast': '#10b981'},
-                labels={'count': 'Monthly EV Registrations', 'date': 'Date'}
-            )
-            fig.update_layout(
-                height=350,
-                margin=dict(l=0, r=0, t=0, b=0),
-                paper_bgcolor='rgba(0,0,0,0)',
-                plot_bgcolor='rgba(0,0,0,0)',
-                legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5)
-            )
-            st.plotly_chart(fig, use_container_width=True)
-            st.caption("📍 Forecast: Continued EV growth projected at ~15% YoY")
+            if prophet_forecast_path.exists():
+                # Use Prophet forecast with confidence intervals
+                prophet_df = pd.read_csv(prophet_forecast_path)
+                prophet_df['date'] = pd.to_datetime(prophet_df['date'])
+                
+                # Split into historical and forecast
+                historical = prophet_df[prophet_df['date'] <= '2025-12-31'].copy()
+                forecast_only = prophet_df[prophet_df['date'] > '2025-12-31'].copy()
+                
+                # Create figure with confidence intervals
+                fig = go.Figure()
+                
+                # Historical line
+                fig.add_trace(go.Scatter(
+                    x=historical['date'],
+                    y=historical['forecast'],
+                    name='Historical',
+                    line=dict(color='#667eea', width=2),
+                    mode='lines'
+                ))
+                
+                # Confidence interval (shaded area)
+                fig.add_trace(go.Scatter(
+                    x=pd.concat([forecast_only['date'], forecast_only['date'][::-1]]),
+                    y=pd.concat([forecast_only['upper_bound'], forecast_only['lower_bound'][::-1]]),
+                    fill='toself',
+                    fillcolor='rgba(16, 185, 129, 0.2)',
+                    line=dict(color='rgba(255,255,255,0)'),
+                    hoverinfo='skip',
+                    showlegend=True,
+                    name='95% CI'
+                ))
+                
+                # Forecast line
+                fig.add_trace(go.Scatter(
+                    x=forecast_only['date'],
+                    y=forecast_only['forecast'],
+                    name='Forecast',
+                    line=dict(color='#10b981', width=3),
+                    mode='lines'
+                ))
+                
+                fig.update_layout(
+                    height=350,
+                    margin=dict(l=0, r=0, t=0, b=0),
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5),
+                    xaxis_title="Date",
+                    yaxis_title="Monthly EV Registrations"
+                )
+                st.plotly_chart(fig, use_container_width=True)
+                
+                # Load metrics
+                prophet_metrics_path = models_dir / "prophet_metrics.json"
+                if prophet_metrics_path.exists():
+                    with open(prophet_metrics_path) as f:
+                        p_metrics = json.load(f)
+                    st.caption(f"📍 Prophet Forecast | 2026: ~{p_metrics.get('2026_avg_monthly', 0):,.0f}/mo → 2030: ~{p_metrics.get('2030_avg_monthly', 0):,.0f}/mo | Growth: {p_metrics.get('growth_rate_5yr', 0)}%")
+                else:
+                    st.caption("📍 Prophet Forecast with 95% confidence intervals")
+            else:
+                st.warning("Prophet forecast not found. Run `python prophet_forecast.py` to generate.")
         
         with col2:
             st.markdown("### 🎯 State Clustering Analysis")

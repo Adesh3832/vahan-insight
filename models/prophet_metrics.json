@@ -1,0 +1,11 @@
+{
+  "model": "Prophet",
+  "training_samples": 66,
+  "forecast_months": 60,
+  "historical_end": "2025-12-31",
+  "forecast_start": "2026-01-31",
+  "forecast_end": "2030-12-31",
+  "2026_avg_monthly": 6197.0,
+  "2030_avg_monthly": 15189.0,
+  "growth_rate_5yr": 145.1
+}
