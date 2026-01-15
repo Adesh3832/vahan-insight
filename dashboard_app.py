@@ -985,6 +985,9 @@ with tab4:
             growth_multiplier = 1 + (0.15 * days_from_start / 365)  # 15% annual growth
             forecast_agg['count'] = forecast_agg['count'] * growth_multiplier
             
+            # Smooth forecast with 3-month rolling average to reduce fluctuations
+            forecast_agg['count'] = forecast_agg['count'].rolling(window=3, center=True, min_periods=1).mean()
+            
             forecast_agg['type'] = 'Forecast'
             
             # Combine
