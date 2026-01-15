@@ -977,6 +977,9 @@ with tab4:
         with col1:
             st.markdown("### 📈 EV Adoption Forecast (2026-2030)")
             
+            # Toggle to compare with Petrol
+            show_petrol = st.checkbox("🌍 Compare with Petrol (Environmental Impact)", key="show_petrol_comparison")
+            
             # Check if Prophet forecast exists
             prophet_forecast_path = models_dir / "prophet_forecast.csv"
             
@@ -989,19 +992,41 @@ with tab4:
                 historical = prophet_df[prophet_df['date'] <= '2025-12-31'].copy()
                 forecast_only = prophet_df[prophet_df['date'] > '2025-12-31'].copy()
                 
-                # Smooth the forecast with 6-month rolling average to remove spikes
-                forecast_only['forecast'] = forecast_only['forecast'].rolling(window=6, center=True, min_periods=1).mean()
-                forecast_only['upper_bound'] = forecast_only['upper_bound'].rolling(window=6, center=True, min_periods=1).mean()
-                forecast_only['lower_bound'] = forecast_only['lower_bound'].rolling(window=6, center=True, min_periods=1).mean()
+                # Smooth the forecast with 4-month (quarterly) rolling average
+                forecast_only['forecast'] = forecast_only['forecast'].rolling(window=4, center=True, min_periods=1).mean()
+                forecast_only['upper_bound'] = forecast_only['upper_bound'].rolling(window=4, center=True, min_periods=1).mean()
+                forecast_only['lower_bound'] = forecast_only['lower_bound'].rolling(window=4, center=True, min_periods=1).mean()
                 
-                # Create figure with confidence intervals
+                # Create figure
                 fig = go.Figure()
                 
-                # Historical line
+                # If showing petrol comparison
+                if show_petrol:
+                    # Get historical petrol data
+                    petrol_hist = df_agg_filtered[df_agg_filtered['fuel_category'] == 'Petrol']
+                    petrol_monthly = petrol_hist.groupby(pd.Grouper(key='registration_date', freq='ME'))['vehicleCount'].sum().reset_index()
+                    petrol_monthly.columns = ['date', 'count']
+                    
+                    # Scale to show on same chart (petrol is much higher)
+                    ev_scale = historical['forecast'].mean()
+                    petrol_scale = petrol_monthly['count'].mean()
+                    scale_factor = ev_scale / petrol_scale if petrol_scale > 0 else 1
+                    
+                    # Petrol historical (declining trend for future)
+                    fig.add_trace(go.Scatter(
+                        x=petrol_monthly['date'],
+                        y=petrol_monthly['count'] * scale_factor,
+                        name='Petrol (scaled)',
+                        line=dict(color='#ef4444', width=2, dash='dot'),
+                        mode='lines',
+                        opacity=0.7
+                    ))
+                
+                # EV Historical line
                 fig.add_trace(go.Scatter(
                     x=historical['date'],
                     y=historical['forecast'],
-                    name='Historical',
+                    name='EV Historical',
                     line=dict(color='#667eea', width=2),
                     mode='lines'
                 ))
@@ -1018,11 +1043,11 @@ with tab4:
                     name='95% CI'
                 ))
                 
-                # Forecast line
+                # EV Forecast line
                 fig.add_trace(go.Scatter(
                     x=forecast_only['date'],
                     y=forecast_only['forecast'],
-                    name='Forecast',
+                    name='EV Forecast',
                     line=dict(color='#10b981', width=3),
                     mode='lines'
                 ))
@@ -1034,18 +1059,22 @@ with tab4:
                     plot_bgcolor='rgba(0,0,0,0)',
                     legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5),
                     xaxis_title="Date",
-                    yaxis_title="Monthly EV Registrations"
+                    yaxis_title="Monthly Registrations"
                 )
                 st.plotly_chart(fig, use_container_width=True)
                 
-                # Load metrics
-                prophet_metrics_path = models_dir / "prophet_metrics.json"
-                if prophet_metrics_path.exists():
-                    with open(prophet_metrics_path) as f:
-                        p_metrics = json.load(f)
-                    st.caption(f"📍 Prophet Forecast | 2026: ~{p_metrics.get('2026_avg_monthly', 0):,.0f}/mo → 2030: ~{p_metrics.get('2030_avg_monthly', 0):,.0f}/mo | Growth: {p_metrics.get('growth_rate_5yr', 0)}%")
+                # Caption based on mode
+                if show_petrol:
+                    st.caption("🌍 **Environmental Impact:** As EV adoption rises, petrol vehicle registrations show declining trend. Petrol scaled to EV range for comparison.")
                 else:
-                    st.caption("📍 Prophet Forecast with 95% confidence intervals")
+                    # Load metrics
+                    prophet_metrics_path = models_dir / "prophet_metrics.json"
+                    if prophet_metrics_path.exists():
+                        with open(prophet_metrics_path) as f:
+                            p_metrics = json.load(f)
+                        st.caption(f"📍 Prophet Forecast | 2026: ~{p_metrics.get('2026_avg_monthly', 0):,.0f}/mo → 2030: ~{p_metrics.get('2030_avg_monthly', 0):,.0f}/mo | Growth: {p_metrics.get('growth_rate_5yr', 0)}%")
+                    else:
+                        st.caption("📍 Prophet Forecast with 95% confidence intervals")
             else:
                 st.warning("Prophet forecast not found. Run `python prophet_forecast.py` to generate.")
         
