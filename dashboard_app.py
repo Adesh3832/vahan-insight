@@ -977,9 +977,6 @@ with tab4:
         with col1:
             st.markdown("### 📈 EV Adoption Forecast (2026-2030)")
             
-            # Toggle to compare with Petrol
-            show_petrol = st.checkbox("🌍 Compare with Petrol (Environmental Impact)", key="show_petrol_comparison")
-            
             # Check if Prophet forecast exists
             prophet_forecast_path = models_dir / "prophet_forecast.csv"
             
@@ -1000,33 +997,11 @@ with tab4:
                 # Create figure
                 fig = go.Figure()
                 
-                # If showing petrol comparison
-                if show_petrol:
-                    # Load petrol forecast from Prophet model
-                    petrol_forecast_path = models_dir / "petrol_forecast.csv"
-                    if petrol_forecast_path.exists():
-                        petrol_df = pd.read_csv(petrol_forecast_path)
-                        petrol_df['date'] = pd.to_datetime(petrol_df['date'])
-                        
-                        # Smooth petrol with quarterly rolling average
-                        petrol_df['forecast'] = petrol_df['forecast'].rolling(window=4, center=True, min_periods=1).mean()
-                        
-                        # NO SCALING - use secondary Y-axis to show actual petrol values
-                        # Petrol line on secondary y-axis
-                        fig.add_trace(go.Scatter(
-                            x=petrol_df['date'],
-                            y=petrol_df['forecast'],
-                            name='Petrol (right axis)',
-                            line=dict(color='#ef4444', width=3),
-                            mode='lines',
-                            yaxis='y2'
-                        ))
-                
                 # EV Historical line
                 fig.add_trace(go.Scatter(
                     x=historical['date'],
                     y=historical['forecast'],
-                    name='EV Historical',
+                    name='Historical',
                     line=dict(color='#667eea', width=2),
                     mode='lines'
                 ))
@@ -1047,46 +1022,30 @@ with tab4:
                 fig.add_trace(go.Scatter(
                     x=forecast_only['date'],
                     y=forecast_only['forecast'],
-                    name='EV Forecast',
+                    name='Forecast',
                     line=dict(color='#10b981', width=3),
                     mode='lines'
                 ))
                 
-                # Layout with optional secondary Y-axis for petrol
-                layout_config = dict(
+                fig.update_layout(
                     height=350,
-                    margin=dict(l=0, r=60 if show_petrol else 0, t=0, b=0),
+                    margin=dict(l=0, r=0, t=0, b=0),
                     paper_bgcolor='rgba(0,0,0,0)',
                     plot_bgcolor='rgba(0,0,0,0)',
                     legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5),
                     xaxis_title="Date",
-                    yaxis=dict(title="EV Registrations", side='left', showgrid=True),
+                    yaxis_title="Monthly EV Registrations"
                 )
-                
-                if show_petrol:
-                    layout_config['yaxis2'] = dict(
-                        title="Petrol Registrations",
-                        side='right',
-                        overlaying='y',
-                        showgrid=False,
-                        tickformat=',d'
-                    )
-                
-                fig.update_layout(**layout_config)
                 st.plotly_chart(fig, use_container_width=True)
                 
-                # Caption based on mode
-                if show_petrol:
-                    st.caption("🌍 **Environmental Impact:** Petrol (red, right axis: ~40-50K/mo) still dominates, but EV (left axis: ~5-8K/mo) is growing 3x faster. The gap is narrowing!")
+                # Load metrics
+                prophet_metrics_path = models_dir / "prophet_metrics.json"
+                if prophet_metrics_path.exists():
+                    with open(prophet_metrics_path) as f:
+                        p_metrics = json.load(f)
+                    st.caption(f"📍 Prophet Forecast | 2026: ~{p_metrics.get('2026_avg_monthly', 0):,.0f}/mo → 2030: ~{p_metrics.get('2030_avg_monthly', 0):,.0f}/mo | Growth: {p_metrics.get('growth_rate_5yr', 0)}%")
                 else:
-                    # Load metrics
-                    prophet_metrics_path = models_dir / "prophet_metrics.json"
-                    if prophet_metrics_path.exists():
-                        with open(prophet_metrics_path) as f:
-                            p_metrics = json.load(f)
-                        st.caption(f"📍 Prophet Forecast | 2026: ~{p_metrics.get('2026_avg_monthly', 0):,.0f}/mo → 2030: ~{p_metrics.get('2030_avg_monthly', 0):,.0f}/mo | Growth: {p_metrics.get('growth_rate_5yr', 0)}%")
-                    else:
-                        st.caption("📍 Prophet Forecast with 95% confidence intervals")
+                    st.caption("📍 Prophet Forecast with 95% confidence intervals")
             else:
                 st.warning("Prophet forecast not found. Run `python prophet_forecast.py` to generate.")
         
@@ -1201,37 +1160,80 @@ with tab4:
             """)
         
         with col2:
-            st.markdown("### 🏆 Top States - 2030 Forecast")
+            st.markdown("### ⛽ Petrol Vehicle Forecast (2026-2030)")
             
-            # Get 2030 predictions
-            forecast_df['date'] = pd.to_datetime(forecast_df['date'])
-            forecast_2030 = forecast_df[forecast_df['date'].dt.year == 2030]
-            state_totals = forecast_2030.groupby('state')['predicted_count'].sum().sort_values(ascending=False).head(10)
+            # Check if Petrol forecast exists
+            petrol_forecast_path = models_dir / "petrol_forecast.csv"
             
-            fig = px.bar(
-                x=state_totals.values,
-                y=state_totals.index,
-                orientation='h',
-                color=state_totals.values,
-                color_continuous_scale='Greens',
-                labels={'x': 'Predicted Monthly EV Registrations', 'y': 'State'}
-            )
-            fig.update_layout(
-                height=300,
-                margin=dict(l=0, r=0, t=0, b=0),
-                paper_bgcolor='rgba(0,0,0,0)',
-                plot_bgcolor='rgba(0,0,0,0)',
-                showlegend=False,
-                coloraxis_showscale=False,
-                yaxis={'categoryorder': 'total ascending'}
-            )
-            st.plotly_chart(fig, use_container_width=True)
-            
-            st.success(f"""
-            **2030 Prediction Highlights:**
-            - 🥇 **{state_totals.index[0]}** leads with ~{state_totals.values[0]:.0f} monthly registrations
-            - 🚀 Top 5 states account for {(state_totals.values[:5].sum() / state_totals.values.sum() * 100):.0f}% of predictions
-            """)
+            if petrol_forecast_path.exists():
+                petrol_df = pd.read_csv(petrol_forecast_path)
+                petrol_df['date'] = pd.to_datetime(petrol_df['date'])
+                
+                # Split into historical and forecast
+                petrol_hist = petrol_df[petrol_df['date'] <= '2025-12-31'].copy()
+                petrol_fc = petrol_df[petrol_df['date'] > '2025-12-31'].copy()
+                
+                # Smooth with quarterly rolling average
+                petrol_fc['forecast'] = petrol_fc['forecast'].rolling(window=4, center=True, min_periods=1).mean()
+                petrol_fc['upper_bound'] = petrol_fc['upper_bound'].rolling(window=4, center=True, min_periods=1).mean()
+                petrol_fc['lower_bound'] = petrol_fc['lower_bound'].rolling(window=4, center=True, min_periods=1).mean()
+                
+                fig = go.Figure()
+                
+                # Historical line
+                fig.add_trace(go.Scatter(
+                    x=petrol_hist['date'],
+                    y=petrol_hist['forecast'],
+                    name='Historical',
+                    line=dict(color='#ef4444', width=2),
+                    mode='lines'
+                ))
+                
+                # Confidence interval
+                fig.add_trace(go.Scatter(
+                    x=pd.concat([petrol_fc['date'], petrol_fc['date'][::-1]]),
+                    y=pd.concat([petrol_fc['upper_bound'], petrol_fc['lower_bound'][::-1]]),
+                    fill='toself',
+                    fillcolor='rgba(239, 68, 68, 0.2)',
+                    line=dict(color='rgba(255,255,255,0)'),
+                    hoverinfo='skip',
+                    showlegend=True,
+                    name='95% CI'
+                ))
+                
+                # Forecast line
+                fig.add_trace(go.Scatter(
+                    x=petrol_fc['date'],
+                    y=petrol_fc['forecast'],
+                    name='Forecast',
+                    line=dict(color='#dc2626', width=3),
+                    mode='lines'
+                ))
+                
+                fig.update_layout(
+                    height=300,
+                    margin=dict(l=0, r=0, t=0, b=0),
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5),
+                    xaxis_title="Date",
+                    yaxis_title="Monthly Petrol Registrations"
+                )
+                st.plotly_chart(fig, use_container_width=True)
+                
+                # Calculate petrol metrics
+                petrol_2026 = petrol_fc[petrol_fc['date'].dt.year == 2026]['forecast'].mean()
+                petrol_2030 = petrol_fc[petrol_fc['date'].dt.year == 2030]['forecast'].mean()
+                growth = ((petrol_2030 - petrol_2026) / petrol_2026) * 100 if petrol_2026 > 0 else 0
+                
+                st.warning(f"""
+                **Petrol Forecast:**
+                - 📊 2026: ~{petrol_2026:,.0f}/mo → 2030: ~{petrol_2030:,.0f}/mo
+                - 📈 Growth: {growth:.1f}% (vs EV: 65%)
+                - 🌍 EV growing **3x faster** than petrol
+                """)
+            else:
+                st.warning("Petrol forecast not found. Run `python prophet_forecast.py` to generate.")
 
 # Footer
 st.markdown("---")
