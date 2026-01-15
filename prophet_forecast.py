@@ -24,27 +24,28 @@ MODELS_DIR = BASE_DIR / "models"
 MODELS_DIR.mkdir(exist_ok=True)
 
 
-def load_and_prepare_data():
+def load_and_prepare_data(fuel_type='EV'):
     """Load and aggregate data at national level for forecasting"""
-    print("📊 Loading and preparing national-level EV data...")
+    print(f"📊 Loading and preparing national-level {fuel_type} data...")
     
     df_agg = pd.read_csv(DATA_DIR / "state_month_fuel_cleaned.csv")
     df_agg['registration_date'] = pd.to_datetime(df_agg['registration_date'])
     
-    # Filter for EV data only
-    ev_data = df_agg[df_agg['fuel_category'] == 'EV'].copy()
+    # Filter for specified fuel type
+    fuel_data = df_agg[df_agg['fuel_category'] == fuel_type].copy()
     
     # Aggregate to national monthly level
-    national_monthly = ev_data.groupby(
+    national_monthly = fuel_data.groupby(
         pd.Grouper(key='registration_date', freq='ME')
     )['vehicleCount'].sum().reset_index()
     
     national_monthly.columns = ['ds', 'y']  # Prophet format
     
     # Remove incomplete months (very low counts)
-    national_monthly = national_monthly[national_monthly['y'] > 100]
+    threshold = 100 if fuel_type == 'EV' else 1000
+    national_monthly = national_monthly[national_monthly['y'] > threshold]
     
-    print(f"✓ Prepared {len(national_monthly)} months of national EV data")
+    print(f"✓ Prepared {len(national_monthly)} months of national {fuel_type} data")
     print(f"  Date range: {national_monthly['ds'].min().date()} to {national_monthly['ds'].max().date()}")
     print(f"  Monthly range: {national_monthly['y'].min()} to {national_monthly['y'].max()}")
     
@@ -184,27 +185,74 @@ def main():
     print("🔮 Vahan-Insight: Production Prophet Forecasting")
     print("=" * 60)
     
-    # Load and prepare data
-    df = load_and_prepare_data()
+    # ===== EV FORECAST =====
+    print("\n" + "=" * 40)
+    print("📊 EV FORECAST")
+    print("=" * 40)
     
-    # Train Prophet with logistic growth
-    model, cap = train_prophet_model(df)
+    # Load and prepare EV data
+    df_ev = load_and_prepare_data('EV')
     
-    # Generate forecast
-    forecast = forecast_future(model, cap, periods=60)
+    # Train Prophet for EV
+    model_ev, cap_ev = train_prophet_model(df_ev)
     
-    # Save results
-    metrics = save_results(model, forecast, df)
+    # Generate EV forecast
+    forecast_ev = forecast_future(model_ev, cap_ev, periods=60)
     
+    # Save EV results
+    metrics_ev = save_results(model_ev, forecast_ev, df_ev)
+    
+    # ===== PETROL FORECAST =====
+    print("\n" + "=" * 40)
+    print("⛽ PETROL FORECAST")
+    print("=" * 40)
+    
+    # Load and prepare PETROL data
+    df_petrol = load_and_prepare_data('PETROL')
+    
+    # Train Prophet for PETROL (use different parameters)
+    print("\n🔮 Training Prophet model for PETROL...")
+    model_petrol = Prophet(
+        growth='linear',
+        yearly_seasonality=5,
+        weekly_seasonality=False,
+        daily_seasonality=False,
+        seasonality_mode='additive',
+        changepoint_prior_scale=0.05,
+        seasonality_prior_scale=0.5,
+        interval_width=0.95
+    )
+    model_petrol.fit(df_petrol)
+    print("✓ PETROL Prophet model trained!")
+    
+    # Generate PETROL forecast
+    future_petrol = model_petrol.make_future_dataframe(periods=60, freq='ME')
+    forecast_petrol = model_petrol.predict(future_petrol)
+    
+    # Save PETROL forecast
+    petrol_output = forecast_petrol[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].copy()
+    petrol_output.columns = ['date', 'forecast', 'lower_bound', 'upper_bound']
+    petrol_output.to_csv(MODELS_DIR / 'petrol_forecast.csv', index=False)
+    print("✓ Saved: petrol_forecast.csv")
+    
+    # ===== SUMMARY =====
     print("\n" + "=" * 60)
     print("✅ Prophet Forecasting Complete!")
     print("=" * 60)
-    print(f"\n📊 Summary:")
-    print(f"  Training data: {metrics['training_samples']} months")
-    print(f"  Forecast: {metrics['forecast_start']} to {metrics['forecast_end']}")
-    print(f"  2026 avg: {metrics['2026_avg_monthly']:,.0f} EVs/month")
-    print(f"  2030 avg: {metrics['2030_avg_monthly']:,.0f} EVs/month")
-    print(f"  5-year growth: {metrics['growth_rate_5yr']}%")
+    print(f"\n📊 EV Summary:")
+    print(f"  Training data: {metrics_ev['training_samples']} months")
+    print(f"  Forecast: {metrics_ev['forecast_start']} to {metrics_ev['forecast_end']}")
+    print(f"  2026 avg: {metrics_ev['2026_avg_monthly']:,.0f} EVs/month")
+    print(f"  2030 avg: {metrics_ev['2030_avg_monthly']:,.0f} EVs/month")
+    print(f"  5-year growth: {metrics_ev['growth_rate_5yr']}%")
+    
+    print(f"\n⛽ PETROL Summary:")
+    print(f"  Training data: {len(df_petrol)} months")
+    petrol_2030 = forecast_petrol[forecast_petrol['ds'].dt.year == 2030]['yhat'].mean()
+    petrol_2026 = forecast_petrol[forecast_petrol['ds'].dt.year == 2026]['yhat'].mean()
+    print(f"  2026 avg: {petrol_2026:,.0f}/month")
+    print(f"  2030 avg: {petrol_2030:,.0f}/month")
+    print(f"  Trend: {'📉 Declining' if petrol_2030 < petrol_2026 else '📈 Growing'}")
 
 
 if __name__ == "__main__":

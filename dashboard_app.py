@@ -1002,25 +1002,29 @@ with tab4:
                 
                 # If showing petrol comparison
                 if show_petrol:
-                    # Get historical petrol data (uppercase PETROL in dataset)
-                    petrol_hist = df_agg_filtered[df_agg_filtered['fuel_category'] == 'PETROL']
-                    petrol_monthly = petrol_hist.groupby(pd.Grouper(key='registration_date', freq='ME'))['vehicleCount'].sum().reset_index()
-                    petrol_monthly.columns = ['date', 'count']
-                    
-                    # Scale to show on same chart (petrol is much higher)
-                    ev_scale = historical['forecast'].mean()
-                    petrol_scale = petrol_monthly['count'].mean()
-                    scale_factor = ev_scale / petrol_scale if petrol_scale > 0 else 1
-                    
-                    # Petrol historical (declining trend for future)
-                    fig.add_trace(go.Scatter(
-                        x=petrol_monthly['date'],
-                        y=petrol_monthly['count'] * scale_factor,
-                        name='Petrol (scaled)',
-                        line=dict(color='#ef4444', width=2, dash='dot'),
-                        mode='lines',
-                        opacity=0.7
-                    ))
+                    # Load petrol forecast from Prophet model
+                    petrol_forecast_path = models_dir / "petrol_forecast.csv"
+                    if petrol_forecast_path.exists():
+                        petrol_df = pd.read_csv(petrol_forecast_path)
+                        petrol_df['date'] = pd.to_datetime(petrol_df['date'])
+                        
+                        # Smooth petrol with quarterly rolling average
+                        petrol_df['forecast'] = petrol_df['forecast'].rolling(window=4, center=True, min_periods=1).mean()
+                        
+                        # Scale to EV range for visual comparison
+                        ev_scale = historical['forecast'].mean()
+                        petrol_scale = petrol_df['forecast'].mean()
+                        scale_factor = ev_scale / petrol_scale if petrol_scale > 0 else 1
+                        
+                        # Petrol line (full: historical + forecast)
+                        fig.add_trace(go.Scatter(
+                            x=petrol_df['date'],
+                            y=petrol_df['forecast'] * scale_factor,
+                            name='Petrol (scaled)',
+                            line=dict(color='#ef4444', width=2, dash='dot'),
+                            mode='lines',
+                            opacity=0.8
+                        ))
                 
                 # EV Historical line
                 fig.add_trace(go.Scatter(
