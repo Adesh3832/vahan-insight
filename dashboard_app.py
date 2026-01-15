@@ -994,10 +994,8 @@ with tab4:
                 plot_bgcolor='rgba(0,0,0,0)',
                 legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5)
             )
-            # Add vertical line at forecast start
-            fig.add_vline(x=pd.Timestamp('2025-12-31'), line_dash="dash", line_color="gray", 
-                          annotation=dict(text="Forecast Start", showarrow=False))
             st.plotly_chart(fig, use_container_width=True)
+            st.caption("📍 Forecast starts after Dec 2025")
         
         with col2:
             st.markdown("### 🎯 State Clustering Analysis")
