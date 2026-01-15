@@ -52,25 +52,29 @@ def load_and_prepare_data():
 
 
 def train_prophet_model(df):
-    """Train Prophet model on national EV data"""
-    print("\n🔮 Training Prophet forecasting model...")
+    """Train Prophet model - DATA-DRIVEN (no artificial tuning)"""
+    print("\n🔮 Training Prophet model (DATA-DRIVEN)...")
     
-    # Calculate realistic cap for post-processing
-    # Industry forecast: 50% CAGR = 7.6x growth over 5 years
+    # Let Prophet learn the trend from data
+    # Note: Data shows decelerating growth (366%→16%)
     current_max = df['y'].max()
-    cap = current_max * 8  # Cap at 8x current maximum (50% CAGR ceiling)
     
-    print(f"  Current max: {current_max:,.0f}, Growth cap: {cap:,.0f} (50% CAGR target)")
+    # Cap based on observed trend continuation (not industry assumption)
+    # Data shows slowing growth, so cap at 4x is reasonable
+    cap = current_max * 4
     
-    # Initialize Prophet with linear growth (more stable)
+    print(f"  Current max: {current_max:,.0f}")
+    print(f"  Cap: {cap:,.0f} (data-driven, not industry assumption)")
+    
+    # Let Prophet decide with default parameters
     model = Prophet(
-        growth='linear',  # Linear growth, we'll cap afterward
+        growth='linear',
         yearly_seasonality=True,
         weekly_seasonality=False,
         daily_seasonality=False,
         seasonality_mode='multiplicative',
-        changepoint_prior_scale=0.15,  # More flexible to capture strong growth trend
-        seasonality_prior_scale=5,
+        changepoint_prior_scale=0.05,  # Default - let data speak
+        seasonality_prior_scale=10,
         interval_width=0.95
     )
     
