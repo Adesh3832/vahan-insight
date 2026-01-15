@@ -42,45 +42,72 @@ def setup_kaggle_credentials() -> bool:
     
     Returns:
         bool: True if credentials were set up successfully
+def setup_kaggle_credentials():
     """
-    token = os.environ.get("KAGGLE_API_TOKEN")
-    
-    if not token:
-        logger.error("KAGGLE_API_TOKEN environment variable not set!")
-        logger.info("Set it with: export KAGGLE_API_TOKEN='your_token_here'")
-        return False
-    
-    # Create kaggle directory
+    Set up Kaggle API credentials.
+    Supports multiple sources:
+    1. Streamlit secrets (for cloud deployment)
+    2. Environment variables
+    3. .env file
+    """
     kaggle_dir = Path.home() / ".kaggle"
-    kaggle_dir.mkdir(exist_ok=True)
     kaggle_json = kaggle_dir / "kaggle.json"
     
-    # For KGAT_ tokens (new format from Kaggle 2024+)
-    # We need to create a kaggle.json with the token as the key
-    # The username can be empty or a placeholder for KGAT_ tokens
-    if token.startswith("KGAT_"):
-        credentials = {"username": "__token__", "key": token}
-        logger.info("✓ Kaggle API token (KGAT_ format) detected")
-    elif ":" in token:
-        # Legacy format: username:api_key
-        username, api_key = token.split(":", 1)
-        credentials = {"username": username, "key": api_key}
-        logger.info("✓ Kaggle credentials (legacy format) detected")
-    else:
-        # Assume it's just an API key
-        username = os.environ.get("KAGGLE_USERNAME", "__token__")
-        credentials = {"username": username, "key": token}
-        logger.info("✓ Kaggle API key detected")
+    # Try to get credentials from Streamlit secrets first (for cloud deployment)
+    try:
+        import streamlit as st
+        if hasattr(st, 'secrets') and 'KAGGLE_USERNAME' in st.secrets:
+            username = st.secrets['KAGGLE_USERNAME']
+            key = st.secrets['KAGGLE_KEY']
+            logger.info("✓ Using Kaggle credentials from Streamlit secrets")
+            
+            # Create kaggle.json for API
+            kaggle_dir.mkdir(parents=True, exist_ok=True)
+            with open(kaggle_json, 'w') as f:
+                json.dump({"username": username, "key": key}, f)
+            kaggle_json.chmod(0o600)
+            return
+    except (ImportError, AttributeError, KeyError):
+        pass  # Streamlit not available or secrets not set
     
-    # Write credentials to kaggle.json
-    with open(kaggle_json, 'w') as f:
-        json.dump(credentials, f)
+    # Check if kaggle.json already exists
+    if kaggle_json.exists():
+        logger.info("✓ Using existing ~/.kaggle/kaggle.json")
+        return
     
-    # Set proper permissions (600) - required by Kaggle API
-    os.chmod(kaggle_json, stat.S_IRUSR | stat.S_IWUSR)
+    # Try environment variables
+    username = os.getenv('KAGGLE_USERNAME')
+    key = os.getenv('KAGGLE_KEY') or os.getenv('KAGGLE_API_TOKEN')
     
-    logger.info(f"✓ Credentials saved to {kaggle_json}")
-    return True
+    if username and key:
+        logger.info("✓ Using Kaggle credentials from environment variables")
+        kaggle_dir.mkdir(parents=True, exist_ok=True)
+        with open(kaggle_json, 'w') as f:
+            json.dump({"username": username, "key": key}, f)
+        kaggle_json.chmod(0o600)
+        return
+    
+    # Try .env file
+    env_path = Path(__file__).parent / '.env'
+    if env_path.exists():
+        load_dotenv(env_path)
+        username = os.getenv('KAGGLE_USERNAME')
+        key = os.getenv('KAGGLE_KEY') or os.getenv('KAGGLE_API_TOKEN')
+        
+        if username and key:
+            logger.info("✓ Using Kaggle credentials from .env file")
+            kaggle_dir.mkdir(parents=True, exist_ok=True)
+            with open(kaggle_json, 'w') as f:
+                json.dump({"username": username, "key": key}, f)
+            kaggle_json.chmod(0o600)
+            return
+    
+    raise EnvironmentError(
+        "Kaggle credentials not found! Please set up credentials via:\n"
+        "1. Streamlit secrets (for cloud): KAGGLE_USERNAME and KAGGLE_KEY\n"
+        "2. Environment variables: KAGGLE_USERNAME and KAGGLE_KEY\n"
+        "3. .env file with KAGGLE_USERNAME and KAGGLE_KEY"
+    )
 
 
 def download_dataset() -> bool:
