@@ -1052,17 +1052,47 @@ with tab4:
         with col2:
             st.markdown("### 🎯 State Clustering Analysis")
             
-            # Scatter plot of clusters
+            # Toggle for clustering perspective
+            cluster_view = st.radio(
+                "View by:",
+                ["Adoption Rate (%)", "Total EVs (Absolute)"],
+                horizontal=True,
+                key="cluster_view"
+            )
+            
+            # Create dynamic cluster labels based on view
+            clusters_display = clusters_df.copy()
+            
+            if cluster_view == "Total EVs (Absolute)":
+                # Rank by total EVs
+                clusters_display['rank'] = clusters_display['total_evs'].rank(ascending=False)
+                clusters_display['cluster_label'] = clusters_display['rank'].apply(
+                    lambda x: 'EV Market Leaders' if x <= 8 else 
+                              ('Growing Markets' if x <= 20 else 'Emerging Markets')
+                )
+                color_col = 'cluster_label'
+                size_col = 'total_evs'
+            else:
+                # Rank by adoption rate
+                clusters_display['rank'] = clusters_display['adoption_rate'].rank(ascending=False)
+                clusters_display['cluster_label'] = clusters_display['rank'].apply(
+                    lambda x: 'Adoption Leaders' if x <= 8 else 
+                              ('Moderate Adopters' if x <= 20 else 'Early Stage')
+                )
+                color_col = 'cluster_label'
+                size_col = 'total_evs'
+            
+            # Scatter plot with dynamic coloring
             fig = px.scatter(
-                clusters_df,
+                clusters_display,
                 x='adoption_rate',
                 y='growth_rate',
-                size='total_evs',
-                color='cluster_name',
+                size=size_col,
+                color=color_col,
                 hover_name='state',
                 hover_data={'total_evs': True, 'adoption_rate': ':.2f', 'growth_rate': ':.1f'},
                 color_discrete_sequence=px.colors.qualitative.Set2,
-                labels={'adoption_rate': 'EV Adoption Rate (%)', 'growth_rate': 'Growth Rate (%)'}
+                labels={'adoption_rate': 'EV Adoption Rate (%)', 'growth_rate': 'Growth Rate (CAGR %)'}
             )
             fig.update_layout(
                 height=350,
