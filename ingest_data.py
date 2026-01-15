@@ -32,16 +32,6 @@ DATASET_IDENTIFIER = "aatifahmad123/indian-vehicle-registration-data-202025"
 DATA_DIR = Path(__file__).parent / "data"
 
 
-def setup_kaggle_credentials() -> bool:
-    """
-    Set up Kaggle credentials from KAGGLE_API_TOKEN environment variable.
-    
-    Supports both formats:
-    - New format: KGAT_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    - Legacy format: username:api_key or just api_key
-    
-    Returns:
-        bool: True if credentials were set up successfully
 def setup_kaggle_credentials():
     """
     Set up Kaggle API credentials.
